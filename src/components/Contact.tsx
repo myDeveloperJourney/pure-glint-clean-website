@@ -1,32 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from "@heroicons/react/24/outline";
+import Script from "next/script";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-    homeSize: "",
-    frequency: ""
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
-    alert("Thank you for your interest! We'll contact you soon to schedule your free quote.");
-  };
 
   const contactInfo = [
     {
@@ -70,148 +47,22 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Form */}
+          {/* Booking Koala Embedded Form */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="(817) 555-0123"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                      Service Type *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      required
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="standard">Standard Cleaning</option>
-                      <option value="deep">Deep Cleaning</option>
-                      <option value="moveout">Move In/Out Cleaning</option>
-                      <option value="rental">Short Term Rental</option>
-                      <option value="construction">Post Construction</option>
-                      <option value="vacation">Vacation Home</option>
-                      <option value="custom">Custom Service</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="homeSize" className="block text-sm font-medium text-gray-700 mb-2">
-                      Home Size
-                    </label>
-                    <select
-                      id="homeSize"
-                      name="homeSize"
-                      value={formData.homeSize}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="">Select size</option>
-                      <option value="1br">1 Bedroom</option>
-                      <option value="2br">2 Bedrooms</option>
-                      <option value="3br">3 Bedrooms</option>
-                      <option value="4br">4 Bedrooms</option>
-                      <option value="5br">5+ Bedrooms</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="frequency" className="block text-sm font-medium text-gray-700 mb-2">
-                    Cleaning Frequency
-                  </label>
-                  <select
-                    id="frequency"
-                    name="frequency"
-                    value={formData.frequency}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    <option value="">Select frequency</option>
-                    <option value="onetime">One-time cleaning</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="biweekly">Bi-weekly</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="asneeded">As needed</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Additional Details
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Tell us about any special requests, specific areas of focus, or questions you have..."
-                  />
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors"
-                  >
-                    Get My Free Quote
-                  </button>
-                </div>
-              </form>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Book Your Cleaning Service</h3>
+              <div className="w-full">
+                <iframe 
+                  src="https://pureglintclean.bookingkoala.com/booknow?embed=true" 
+                  style={{ border: 'none', height: '1000px', width: '100%' }}
+                  scrolling="no"
+                  title="Pure Glint Clean Booking Form"
+                />
+                <Script 
+                  src="https://pureglintclean.bookingkoala.com/resources/embed.js" 
+                  strategy="lazyOnload"
+                />
+              </div>
             </div>
           </div>
 
