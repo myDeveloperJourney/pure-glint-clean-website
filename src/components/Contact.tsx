@@ -280,7 +280,7 @@ const Contact = () => {
               Ready to Transform Your Home?
             </h3>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Don't wait another week to feel peace in your own space. Let Pure Glint Clean take the burden off your shoulders.
+              Don&apos;t wait another week to feel peace in your own space. Let Pure Glint Clean take the burden off your shoulders.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

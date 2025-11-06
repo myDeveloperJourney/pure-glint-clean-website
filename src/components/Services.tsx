@@ -55,7 +55,7 @@ const Services = () => {
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div key={service.name} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="relative h-48">
                 <Image

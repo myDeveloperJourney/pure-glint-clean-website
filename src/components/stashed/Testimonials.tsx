@@ -140,9 +140,9 @@ const Testimonials = () => {
               ))}
             </div>
             <blockquote className="text-xl lg:text-2xl font-medium text-gray-900 mb-8">
-              "When it comes to residential cleaning, you need a company you can trust. Here at Pure Glint Clean, 
+              &quot;When it comes to residential cleaning, you need a company you can trust. Here at Pure Glint Clean, 
               we are capable of handling all types of properties from apartments to large homes and everything in-between. 
-              Our customers consistently choose us because of our reliability, attention to detail, and exceptional customer service."
+              Our customers consistently choose us because of our reliability, attention to detail, and exceptional customer service.&quot;
             </blockquote>
             <div className="text-lg font-medium text-blue-600">
               Why so many homes & businesses trust Pure Glint Clean
@@ -156,7 +156,7 @@ const Testimonials = () => {
             See More Reviews
           </h3>
           <p className="text-lg text-gray-600 mb-6">
-            Check out our reviews on Google and see why we're Fort Worth's top-rated cleaning service.
+            Check out our reviews on Google and see why we&apos;re Fort Worth&apos;s top-rated cleaning service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

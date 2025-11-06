@@ -24,11 +24,11 @@ export default function TermsOfService() {
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-bold mb-4 text-gray-900">TERMS AND CONDITIONS</h2>
               <p className="text-gray-900">
-                These terms and conditions (the "Terms and Conditions") govern the use of{" "}
+                These terms and conditions (the &quot;Terms and Conditions&quot;) govern the use of{" "}
                 <a href="https://www.pureglintclean.com" className="text-blue-600 hover:text-blue-800">
                   www.pureglintclean.com
                 </a>{" "}
-                (the "Site"). This Site is owned and operated by Pure Glint Clean, LLC. This Site is an online
+                (the &quot;Site&quot;). This Site is owned and operated by Pure Glint Clean, LLC. This Site is an online
                 booking platform for cleaning services.
               </p>
               <p className="mt-4 text-gray-900">
@@ -40,7 +40,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Intellectual Property</h2>
             <p>
               All content published and made available on our Site is the property of Pure
-              Glint Clean, LLC and the Site's creators. This includes, but is not limited to:
+              Glint Clean, LLC and the Site&apos;s creators. This includes, but is not limited to:
               images, text, logos, documents, downloadable files, and anything that contributes
               to the composition of our Site.
             </p>
@@ -121,7 +121,7 @@ export default function TermsOfService() {
             <div className="bg-yellow-50 p-4 rounded-lg">
               <p>
                 We do not charge any cancellation or rescheduling fees as long as we receive at
-                least 24 business hours' notice (Monday – Friday, 7:00 AM – 11:00 PM EST).
+                least 24 business hours&apos; notice (Monday – Friday, 7:00 AM – 11:00 PM EST).
               </p>
               <p className="mt-2">
                 Call <a href="tel:8174057858" className="text-blue-600 hover:text-blue-800">(817) 405-7858</a> to cancel your services if needed.
