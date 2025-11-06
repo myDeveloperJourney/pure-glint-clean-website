@@ -8,14 +8,37 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pure Glint Clean - Professional Home Cleaning in DFW",
-  description: "Pure Glint Clean provides exceptional residential cleaning services in North Fort Worth and DFW area. Book your free quote today! Standard, deep cleaning, and move-in/out services available.",
-  keywords: "house cleaning, maid service, residential cleaning, Fort Worth, DFW, home cleaning, deep cleaning",
+  title: "Pure Glint Clean - Professional Home Cleaning in North Fort Worth",
+  description: "Pure Glint Clean provides exceptional residential cleaning services in North Fort Worth Area. Book your free quote today! Standard, deep cleaning, and move-in/out services available.",
+  keywords: "house cleaning, maid service, residential cleaning, North Fort Worth, home cleaning, deep cleaning",
+  icons: {
+    icon: [
+      { url: '/pure_glint.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' }
+    ],
+  },
   openGraph: {
-    title: "Pure Glint Clean - Professional Home Cleaning in DFW",
-    description: "Providing smiles one clean at a time. Professional residential cleaning services in North Fort Worth.",
+    title: "Pure Glint Clean - Professional Home Cleaning in North Fort Worth",
+    description: "Professional residential cleaning services in North Fort Worth.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: '/pure_glint.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Pure Glint Clean Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Pure Glint Clean - Professional Home Cleaning in North Fort Worth",
+    description: "Professional residential cleaning services in North Fort Worth.",
+    images: ['/pure_glint.svg'],
   },
 };
 

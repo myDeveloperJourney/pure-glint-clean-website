@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import Logo from "./Logo";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,10 +19,10 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm fixed w-full top-0 z-50">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between border-b border-blue-500 py-4 lg:border-none">
+        <div className="flex w-full items-center justify-between border-b border-blue-500 py-1 lg:border-none">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-blue-600">Pure Glint Clean</span>
+              <Logo width={700} height={225} priority={true} className="h-28 w-auto sm:h-32" />
             </Link>
           </div>
           <div className="ml-10 hidden space-x-8 lg:block">

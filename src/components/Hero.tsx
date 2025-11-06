@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-blue-50 to-blue-100 pt-20">
+    <section id="home" className="relative bg-gradient-to-br from-blue-50 to-blue-100 pt-40">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
@@ -11,13 +11,13 @@ const Hero = () => {
             <span className="block text-blue-600">in North Fort Worth</span>
           </h1>
           <p className="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
-            Providing smiles one clean at a time. Experience exceptional residential cleaning services that give you more time for what matters most.
+            Experience exceptional residential cleaning services that give you more time for what matters most.
           </p>
-          <div className="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
+          <div className="mx-auto mt-5 max-w-lg sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
               <a
                 href="#contact"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg transition-colors"
+                className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-12 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-16 md:text-lg transition-colors whitespace-nowrap"
               >
                 Book Free Quote
               </a>
@@ -25,27 +25,15 @@ const Hero = () => {
             <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
               <a
                 href="tel:8174057858"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-blue-600 hover:bg-gray-50 md:py-4 md:px-10 md:text-lg transition-colors"
+                className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-12 py-3 text-base font-medium text-blue-600 hover:bg-gray-50 md:py-4 md:px-16 md:text-lg transition-colors whitespace-nowrap"
               >
                 (817) 405-7858
               </a>
             </div>
           </div>
           
-          {/* Trust indicators */}
+          {/* Value propositions - honest and compelling */}
           <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div className="col-span-1 flex justify-center md:col-span-1">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">40+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </div>
-            </div>
-            <div className="col-span-1 flex justify-center md:col-span-1">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">2M+</div>
-                <div className="text-sm text-gray-600">Services Delivered</div>
-              </div>
-            </div>
             <div className="col-span-1 flex justify-center md:col-span-1">
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-600">100%</div>
@@ -54,8 +42,20 @@ const Hero = () => {
             </div>
             <div className="col-span-1 flex justify-center md:col-span-1">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">4.9/5</div>
-                <div className="text-sm text-gray-600">Customer Rating</div>
+                <div className="text-2xl font-bold text-blue-600">Same</div>
+                <div className="text-sm text-gray-600">Day Service</div>
+              </div>
+            </div>
+            <div className="col-span-1 flex justify-center md:col-span-1">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600">Fully</div>
+                <div className="text-sm text-gray-600">Insured & Bonded</div>
+              </div>
+            </div>
+            <div className="col-span-1 flex justify-center md:col-span-1">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600">Free</div>
+                <div className="text-sm text-gray-600">Quotes & Estimates</div>
               </div>
             </div>
           </div>
@@ -70,8 +70,8 @@ const Hero = () => {
             <div className="absolute inset-0">
               <Image
                 className="h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Professional cleaning team at work"
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Professional home cleaning services in action"
                 width={2070}
                 height={1380}
                 priority
@@ -84,7 +84,7 @@ const Hero = () => {
                 <span className="block text-blue-200">Pure Glint Clean?</span>
               </h2>
               <p className="mx-auto mt-6 max-w-lg text-center text-xl text-blue-100 sm:max-w-3xl">
-                Serving the North Fort Worth area with pride, and expanding to Newmarket in 2025.
+                Proudly serving the North Fort Worth area with professional cleaning services.
               </p>
               <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                 <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
