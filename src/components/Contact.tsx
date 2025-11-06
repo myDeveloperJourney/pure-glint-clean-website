@@ -43,7 +43,7 @@ const Contact = () => {
     },
     {
       name: "Service Area",
-      value: "North Fort Worth & DFW",
+      value: "North Fort Worth Area",
       href: "#",
       icon: MapPinIcon,
     },
@@ -264,16 +264,9 @@ const Contact = () => {
 
               {/* Service Areas */}
               <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Service Areas</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Service Area</h4>
                 <div className="text-sm text-gray-600 space-y-1">
-                  <div>• North Fort Worth</div>
-                  <div>• Keller</div>
-                  <div>• Southlake</div>
-                  <div>• Grapevine</div>
-                  <div>• Colleyville</div>
-                  <div>• Watauga</div>
-                  <div>• Haltom City</div>
-                  <div>• Newmarket (Coming 2025)</div>
+                  <div>• North Fort Worth Area</div>
                 </div>
               </div>
             </div>

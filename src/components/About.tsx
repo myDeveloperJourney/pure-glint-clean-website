@@ -10,7 +10,7 @@ const About = () => {
     },
     {
       name: "Trusted & Reliable",
-      description: "Our team is bonded, insured, and background checked. We've built lasting relationships with our clients through trust and reliability.",
+      description: "Our team is bonded, insured, and background checked. We're committed to building lasting relationships with our clients through trust and reliability.",
       icon: ShieldCheckIcon,
     },
     {
@@ -47,8 +47,8 @@ const About = () => {
               </h3>
               <p className="mt-3 text-lg text-gray-500">
                 We understand the importance of trust and reliability in the cleaning industry, and we continually 
-                strive to build lasting relationships with our clients. Our dedication to customer satisfaction has 
-                earned us the reputation as the leading cleaning service provider in the area.
+                strive to build lasting relationships with our clients. Our commitment to customer satisfaction drives 
+                everything we do as we establish ourselves in the North Fort Worth community.
               </p>
 
               <dl className="mt-10 space-y-10">
@@ -105,7 +105,7 @@ const About = () => {
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-900">Ready to experience the Pure Glint Clean difference?</h3>
             <p className="mt-4 text-lg text-gray-600">
-              Join hundreds of satisfied customers who trust us with their homes.
+              Become one of our satisfied customers who trust us with their homes.
             </p>
             <div className="mt-8">
               <a

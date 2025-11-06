@@ -38,42 +38,6 @@ const Services = () => {
         "Complete sanitization",
         "Move-in ready guarantee"
       ]
-    },
-    {
-      name: "Short Term Rentals",
-      description: "Specialized cleaning services for Airbnb, VRBO, and other short-term rental properties to ensure 5-star guest experiences.",
-      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Quick turnaround cleaning",
-        "Linen and towel service",
-        "Guest amenity restocking",
-        "Quality inspection checklist",
-        "Same-day availability"
-      ]
-    },
-    {
-      name: "Post Construction",
-      description: "Specialized cleaning to remove construction dust and debris, making your newly renovated space livable and beautiful.",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Construction dust removal",
-        "Paint splatter cleaning",
-        "Window and fixture cleaning",
-        "Floor protection and cleaning",
-        "Final walkthrough included"
-      ]
-    },
-    {
-      name: "Vacation Home Cleaning",
-      description: "Keep your vacation home pristine and guest-ready with our comprehensive vacation rental cleaning services.",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Seasonal preparation cleaning",
-        "Property maintenance checks",
-        "Pool and outdoor area cleaning",
-        "Emergency cleaning services",
-        "Property management coordination"
-      ]
     }
   ];
 
