@@ -26,11 +26,11 @@ export default function PrivacyPolicy() {
           <div className="prose prose-lg max-w-none prose-gray text-gray-900 [&>*]:text-gray-900 [&_p]:text-gray-900 [&_li]:text-gray-900">
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <p className="text-lg text-gray-900">
-                Pure Glint Clean, LLC ("us", "we", or "our") operates the{" "}
+                Pure Glint Clean, LLC (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;) operates the{" "}
                 <a href="https://pureglintclean.com" className="text-blue-600 hover:text-blue-800">
                   https://pureglintclean.com
                 </a>{" "}
-                website (hereinafter referred to as the "Service").
+                website (hereinafter referred to as the &quot;Service&quot;).
               </p>
               <p className="mt-4 text-gray-900">
                 This page informs you of our policies regarding the collection, use and
@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
             <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Types of Data Collected</h3>
             
             <h4 className="text-lg font-semibold text-gray-900 mt-4 mb-2">Personal Data</h4>
-            <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
+            <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (&quot;Personal Data&quot;). Personally identifiable information may include, but is not limited to:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>Email address</li>
               <li>First name and last name</li>
@@ -101,10 +101,10 @@ export default function PrivacyPolicy() {
             <p className="mt-4">We may use your Personal Data to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you. You may opt out of receiving any or all of these communications from us by following the unsubscribe link or the instructions provided in any email we send.</p>
 
             <h4 className="text-lg font-semibold text-gray-900 mt-4 mb-2">Usage Data</h4>
-            <p>We may also collect information on how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's IP address, browser type, browser version, the pages you visit, the time and date of your visit, time spent on pages, device identifiers, and other diagnostic data.</p>
+            <p>We may also collect information on how the Service is accessed and used (&quot;Usage Data&quot;). This Usage Data may include information such as your computer&apos;s IP address, browser type, browser version, the pages you visit, the time and date of your visit, time spent on pages, device identifiers, and other diagnostic data.</p>
 
             <h4 className="text-lg font-semibold text-gray-900 mt-4 mb-2">Location Data</h4>
-            <p>We may use and store information about your location if you give us permission ("Location Data"). We use this data to provide features and improve our Service. You can enable or disable location services via your device settings.</p>
+            <p>We may use and store information about your location if you give us permission (&quot;Location Data&quot;). We use this data to provide features and improve our Service. You can enable or disable location services via your device settings.</p>
 
             <h4 className="text-lg font-semibold text-gray-900 mt-4 mb-2">Tracking & Cookies Data</h4>
             <p>We use cookies and similar tracking technologies to track activity on our Service and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
@@ -175,15 +175,15 @@ export default function PrivacyPolicy() {
             <p>We use third-party services for payment processing.</p>
             <p className="mt-2"><strong>Stripe</strong> - Privacy Policy: <a href="https://stripe.com/us/privacy" className="text-blue-600 hover:text-blue-800">https://stripe.com/us/privacy</a></p>
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Children&apos;s Privacy</h2>
             <p>We do not knowingly collect data from children under 18. If we become aware of such data, we will remove it.</p>
 
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy. We'll notify you by:</p>
+            <p>We may update this Privacy Policy. We&apos;ll notify you by:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>Posting updates to this page</li>
               <li>Email and/or prominent notice on our Service</li>
-              <li>Updating the "effective date" above</li>
+              <li>Updating the &quot;effective date&quot; above</li>
             </ul>
             <p className="mt-2">Please review this policy periodically.</p>
 
