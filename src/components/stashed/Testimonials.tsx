@@ -82,7 +82,7 @@ const Testimonials = () => {
             Our Clients Speak For Themselves
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Don't just take our word for it. Here's what our satisfied customers have to say about Pure Glint Clean.
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers have to say about Pure Glint Clean.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ const Testimonials = () => {
               
               {/* Quote */}
         <blockquote className="text-gray-700 mb-6">
-      "{testimonial.content}"
+      &quot;{testimonial.content}&quot;
               </blockquote>
               
               {/* Author */}

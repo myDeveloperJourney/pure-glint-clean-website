@@ -1,4 +1,5 @@
 import { PhoneIcon, HomeIcon, CheckCircleIcon, CreditCardIcon, ChatBubbleLeftRightIcon, GiftIcon, EyeIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 // Removed unused imports: Link and CalendarIcon
 
 const Process = () => {
@@ -88,12 +89,13 @@ const Process = () => {
               </div>
               <div className={`mt-10 lg:mt-0 ${stepIndex % 2 === 1 ? "lg:order-1" : ""}`}>
                 <div className="relative">
-                  <img
+                  <Image
                     className="relative mx-auto rounded-lg shadow-lg"
                     width={490}
                     height={300}
                     src={step.image}
                     alt={step.title}
+                    priority
                   />
                 </div>
               </div>
