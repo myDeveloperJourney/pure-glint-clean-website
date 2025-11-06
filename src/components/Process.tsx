@@ -1,4 +1,5 @@
-import { PhoneIcon, CalendarIcon, HomeIcon, CheckCircleIcon, CreditCardIcon, ChatBubbleLeftRightIcon, GiftIcon, EyeIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon, HomeIcon, CheckCircleIcon, CreditCardIcon, ChatBubbleLeftRightIcon, GiftIcon, EyeIcon } from "@heroicons/react/24/outline";
+// Removed unused imports: Link and CalendarIcon
 
 const Process = () => {
   const steps = [

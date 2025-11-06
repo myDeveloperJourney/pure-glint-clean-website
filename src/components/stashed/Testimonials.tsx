@@ -4,7 +4,7 @@ import Image from "next/image";
 const Testimonials = () => {
   const testimonials = [
     {
-      content: "Pure Glint Clean has been a game-changer for our family. Their attention to detail is incredible, and our house has never been cleaner. The team is professional, reliable, and trustworthy.",
+            content: "Pure Glint Clean has been a game-changer for our family. Their attention to detail is incredible, and our house has never been cleaner. The team is professional, reliable, and trustworthy.",
       author: {
         name: "Sarah Johnson",
         role: "Homeowner",
@@ -14,7 +14,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      content: "I've been using Pure Glint Clean for over a year now, and they consistently exceed my expectations. Their deep cleaning service is phenomenal - they get into every corner and leave my home sparkling.",
+            content: "I've been using Pure Glint Clean for over a year now, and they consistently exceed my expectations. Their deep cleaning service is phenomenal - they get into every corner and leave my home sparkling.",
       author: {
         name: "Michael Chen",
         role: "Business Owner",
@@ -24,7 +24,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      content: "As a busy working mom, Pure Glint Clean has given me my weekends back. Their team is efficient, friendly, and I completely trust them in my home. Worth every penny!",
+            content: "As a busy working mom, Pure Glint Clean has given me my weekends back. Their team is efficient, friendly, and I completely trust them in my home. Worth every penny!",
       author: {
         name: "Jennifer Martinez",
         role: "Working Mom",
@@ -34,7 +34,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      content: "The move-out cleaning service was exceptional. They made our old house look better than when we first bought it! The landlord was impressed and we got our full deposit back.",
+            content: "The move-out cleaning service was exceptional. They made our old house look better than when we first bought it! The landlord was impressed and we got our full deposit back.",
       author: {
         name: "David Thompson",
         role: "Renter",
@@ -44,7 +44,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      content: "Pure Glint Clean's team helped us prepare for our daughter's graduation party. They did an amazing job and our guests couldn't stop complimenting how beautiful our home looked.",
+            content: "Pure Glint Clean's team helped us prepare for our daughter's graduation party. They did an amazing job and our guests couldn't stop complimenting how beautiful our home looked.",
       author: {
         name: "Lisa Roberts",
         role: "Homeowner",
@@ -54,7 +54,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      content: "Their short-term rental cleaning service has been perfect for our Airbnb. Quick turnaround, consistent quality, and our guests always comment on how clean the space is.",
+            content: "Their short-term rental cleaning service has been perfect for our Airbnb. Quick turnaround, consistent quality, and our guests always comment on how clean the space is.",
       author: {
         name: "Robert Kim",
         role: "Property Owner",
@@ -108,8 +108,8 @@ const Testimonials = () => {
               </div>
               
               {/* Quote */}
-              <blockquote className="text-gray-700 mb-6">
-                "{testimonial.content}"
+        <blockquote className="text-gray-700 mb-6">
+      "{testimonial.content}"
               </blockquote>
               
               {/* Author */}

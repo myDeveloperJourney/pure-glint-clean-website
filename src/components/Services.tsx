@@ -71,12 +71,12 @@ const Services = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.name}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
                 <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <CheckIcon className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{feature}</span>
-                    </li>
-                  ))}
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start">
+                        <CheckIcon className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </li>
+                    ))}
                 </ul>
                 <div className="mt-6">
                   <a
