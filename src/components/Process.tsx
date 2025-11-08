@@ -81,7 +81,7 @@ const Process = () => {
                   {step.description}
                 </p>
                 <a
-                  href={step.id === 1 ? "tel:8174057858" : "#contact"}
+                  href={step.id === 1 ? "tel:8174057858" : "#booking"}
                   className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
                 >
                   {step.id === 1 ? "Call Now" : step.id === 2 ? "Get Quote" : "Book Cleaning"}
@@ -152,7 +152,7 @@ const Process = () => {
                 Call (817) 405-7858
               </a>
               <a
-                href="#contact"
+                href="#booking"
                 className="inline-flex items-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-blue-600 transition-colors"
               >
                 Book Online

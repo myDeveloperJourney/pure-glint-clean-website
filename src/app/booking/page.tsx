@@ -56,7 +56,6 @@ export default function BookNowPage() {
           {/* Booking Koala Embedded Form */}
           <div className="mb-8">
             <div className="bg-white rounded-lg shadow-lg p-2 sm:p-4 md:p-6 lg:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0">Schedule Your Appointment</h2>
               <div className="w-full">
                 <iframe 
                   src="https://pureglintclean.bookingkoala.com/booknow?embed=true" 

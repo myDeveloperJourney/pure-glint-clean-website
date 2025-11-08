@@ -137,7 +137,7 @@ const Footer = () => {
                 Call (817) 405-7858
               </a>
               <a
-                href="#contact"
+                href="#booking"
                 className="inline-flex items-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-blue-600 transition-colors"
               >
                 Book Free Quote

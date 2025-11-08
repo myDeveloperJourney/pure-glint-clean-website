@@ -45,7 +45,7 @@ const Header = () => {
               (817) 405-7858
             </a>
             <Link
-              href="/book-now"
+              href="#booking"
               className="inline-flex items-center rounded-md border border-blue-600 bg-white px-4 py-2 text-sm font-medium text-blue-600 shadow-sm hover:bg-blue-50 transition-colors"
             >
               Book Now
@@ -105,7 +105,7 @@ const Header = () => {
                     Call (817) 405-7858
                   </a>
                   <Link
-                    href="/book-now"
+                    href="#booking"
                     className="flex w-full items-center justify-center rounded-md border border-blue-600 bg-white px-3 py-2.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-50"
                     onClick={() => setMobileMenuOpen(false)}
                   >
