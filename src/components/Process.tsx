@@ -38,11 +38,11 @@ const Process = () => {
       description: "Easily leave instructions, notes, or messages for our crew assigned to your appointments, ensuring a smooth and efficient service.",
       icon: ChatBubbleLeftRightIcon,
     },
-    {
-      name: "Earn Rewards",
-      description: "Love Pure Glint Clean's service? Spread the word and earn $50 in credits for each home you refer to us, contributing to your next cleaning.",
-      icon: GiftIcon,
-    },
+    // {
+    //   name: "Earn Rewards",
+    //   description: "Love Pure Glint Clean's service? Spread the word and earn $50 in credits for each home you refer to us, contributing to your next cleaning.",
+    //   icon: GiftIcon,
+    // },
     {
       name: "Full Transparency",
       description: "Whether you're at home or away, you'll have access to real-time updates on our arrival, cleaning progress, and departure.",
@@ -117,7 +117,7 @@ const Process = () => {
             </p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {features.map((feature) => (
               <div key={feature.name} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">

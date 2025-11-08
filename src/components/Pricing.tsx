@@ -64,7 +64,7 @@ const Pricing = () => {
         <div className="text-center">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Pricing</h2>
           <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Pure Glint Cleaning Tiers
+            Pure Glint Clean Pricing Packages
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
             Transparent pricing with no hidden fees. Choose the cleaning level that works best for your home and budget.
@@ -130,7 +130,7 @@ const Pricing = () => {
         </div>
 
         {/* Additional pricing info */}
-        <div className="mt-16 bg-gray-50 rounded-2xl p-8">
+        {/* <div className="mt-16 bg-gray-50 rounded-2xl p-8">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Pricing Information
@@ -166,7 +166,7 @@ const Pricing = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

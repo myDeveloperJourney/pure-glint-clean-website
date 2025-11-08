@@ -44,12 +44,12 @@ const Header = () => {
               <PhoneIcon className="h-4 w-4 mr-2" />
               (817) 405-7858
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/book-now"
               className="inline-flex items-center rounded-md border border-blue-600 bg-white px-4 py-2 text-sm font-medium text-blue-600 shadow-sm hover:bg-blue-50 transition-colors"
             >
               Book Now
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -104,13 +104,13 @@ const Header = () => {
                     <PhoneIcon className="h-4 w-4 mr-2" />
                     Call (817) 405-7858
                   </a>
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/book-now"
                     className="flex w-full items-center justify-center rounded-md border border-blue-600 bg-white px-3 py-2.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-50"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Book Free Quote
-                  </a>
+                    Book Now
+                  </Link>
                 </div>
               </div>
             </div>
