@@ -46,78 +46,78 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Booking Koala Embedded Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Book Your Cleaning Service</h3>
-              <div className="w-full">
-                <iframe 
-                  src="https://pureglintclean.bookingkoala.com/booknow?embed=true" 
-                  style={{ border: 'none', height: '1000px', width: '100%' }}
-                  scrolling="no"
-                  title="Pure Glint Clean Booking Form"
-                />
-                <Script 
-                  src="https://pureglintclean.bookingkoala.com/resources/embed.js" 
-                  strategy="lazyOnload"
-                />
-              </div>
+        {/* Booking Koala Embedded Form */}
+        <div className="mb-8">
+          <div className="bg-white rounded-lg shadow-lg p-2 sm:p-4 md:p-6 lg:p-8">
+            {/* <h3 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0">Book Your Cleaning Service</h3> */}
+            <div className="w-full">
+              <iframe 
+                src="https://pureglintclean.bookingkoala.com/booknow?embed=true" 
+                style={{ border: 'none', width: '100%', minHeight: '1000px' }}
+                scrolling="no"
+                title="Pure Glint Clean Booking Form"
+              />
+              <Script 
+                src="https://pureglintclean.bookingkoala.com/resources/embed.js" 
+                strategy="lazyOnload"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            
+            <div className="space-y-6">
+              {contactInfo.map((item) => (
+                <div key={item.name} className="flex items-start">
+                  <item.icon className="h-6 w-6 text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">{item.name}</div>
+                    {item.href !== "#" ? (
+                      <a
+                        href={item.href}
+                        className="text-blue-600 hover:text-blue-700 transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <div className="text-gray-600">{item.value}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Contact Information */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-              
-              <div className="space-y-6">
-                {contactInfo.map((item) => (
-                  <div key={item.name} className="flex items-start">
-                    <item.icon className="h-6 w-6 text-blue-500 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="text-sm font-medium text-gray-900">{item.name}</div>
-                      {item.href !== "#" ? (
-                        <a
-                          href={item.href}
-                          className="text-blue-600 hover:text-blue-700 transition-colors"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <div className="text-gray-600">{item.value}</div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Quick Contact */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Need immediate assistance?</h4>
-                <div className="space-y-3">
-                  <a
-                    href="tel:8174057858"
-                    className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-                  >
-                    <PhoneIcon className="h-5 w-5 mr-2" />
-                    Call (817) 405-7858
-                  </a>
-                  <a
-                    href="mailto:contact@pureglintclean.com"
-                    className="w-full flex items-center justify-center px-4 py-3 border border-blue-600 rounded-md shadow-sm text-base font-medium text-blue-600 bg-white hover:bg-blue-50 transition-colors"
-                  >
-                    <EnvelopeIcon className="h-5 w-5 mr-2" />
-                    Send Email
-                  </a>
-                </div>
-              </div>
-
-              {/* Service Areas */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Service Area</h4>
-                <div className="text-sm text-gray-600 space-y-1">
-                  <div>• North Fort Worth Area</div>
+          {/* Quick Contact & Service Area */}
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h4 className="text-xl font-bold text-gray-900 mb-6">Need Immediate Assistance?</h4>
+            <div className="space-y-3 mb-8">
+              <a
+                href="tel:8174057858"
+                className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+              >
+                <PhoneIcon className="h-5 w-5 mr-2" />
+                Call (817) 405-7858
+              </a>
+              <a
+                href="mailto:contact@pureglintclean.com"
+                className="w-full flex items-center justify-center px-4 py-3 border border-blue-600 rounded-md shadow-sm text-base font-medium text-blue-600 bg-white hover:bg-blue-50 transition-colors"
+              >
+                <EnvelopeIcon className="h-5 w-5 mr-2" />
+                Send Email
+              </a>
+            </div>
+            
+            <div className="pt-8 border-t border-gray-200">
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Service Area</h4>
+              <div className="text-gray-600">
+                <div className="flex items-start">
+                  <MapPinIcon className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>North Fort Worth Area</span>
                 </div>
               </div>
             </div>
