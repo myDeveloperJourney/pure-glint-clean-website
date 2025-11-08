@@ -15,7 +15,7 @@ export default function Logo({
 }: LogoProps) {
   return (
     <Image
-      src="/pure_glint.svg"
+      src="/pure_glint (500 x 500 px).svg"
       alt="Pure Glint Clean - Professional Residential Cleaning Services"
       width={width}
       height={height}
