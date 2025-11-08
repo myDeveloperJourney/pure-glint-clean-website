@@ -113,7 +113,7 @@ const Pricing = () => {
 
                 <div className="mt-8">
                   <a
-                    href="#contact"
+                    href="#booking"
                     className={`w-full flex items-center justify-center px-6 py-3 rounded-md text-base font-medium transition-colors ${
                       tier.popular
                         ? "bg-blue-600 text-white hover:bg-blue-700"

@@ -82,7 +82,7 @@ const Services = () => {
                 </ul>
                 <div className="mt-6">
                   <a
-                    href="#contact"
+                    href="#booking"
                     className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-blue-100 hover:bg-blue-200 transition-colors"
                   >
                     Book This Service
@@ -103,7 +103,7 @@ const Services = () => {
               We offer fully customizable cleaning services to match your specific needs and preferences.
             </p>
             <a
-              href="#contact"
+              href="#booking"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
             >
               Request Custom Service

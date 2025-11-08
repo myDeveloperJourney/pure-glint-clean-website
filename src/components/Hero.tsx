@@ -15,7 +15,7 @@ const Hero = () => {
           <div className="mx-auto mt-5 max-w-lg sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
               <a
-                href="#contact"
+                href="#booking"
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-12 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-16 md:text-lg transition-colors whitespace-nowrap"
               >
                 Book Free Quote
@@ -90,7 +90,7 @@ const Hero = () => {
               <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                 <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                   <a
-                    href="#pricing"
+                    href="#contact"
                     className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue-600 shadow-md hover:bg-blue-50 transition-colors"
                   >
                     Get Free Estimate
