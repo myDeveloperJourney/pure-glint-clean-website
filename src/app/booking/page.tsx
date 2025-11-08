@@ -1,9 +1,27 @@
 import Script from "next/script";
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from "@heroicons/react/24/outline";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Book Now - Pure Glint Clean",
-  description: "Book your professional cleaning service with Pure Glint Clean. Easy online booking for residential cleaning in North Fort Worth area.",
+export const metadata: Metadata = {
+  title: "Book Your Cleaning Service Online",
+  description: "Book your professional house cleaning service with Pure Glint Clean. Easy online booking for residential cleaning in North Fort Worth, TX. Same-day service available. Free quotes!",
+  keywords: "book cleaning service, schedule house cleaning, online booking Fort Worth, cleaning appointment North Fort Worth",
+  openGraph: {
+    title: "Book Your Cleaning Service | Pure Glint Clean",
+    description: "Book your professional house cleaning service online. Easy scheduling, same-day service available in North Fort Worth.",
+    url: "https://pureglintclean.com/booking",
+    images: [
+      {
+        url: '/cleaning-crew-two.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Pure Glint Clean Professional Cleaning Team',
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://pureglintclean.com/booking",
+  },
 };
 
 export default function BookNowPage() {

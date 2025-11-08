@@ -4,8 +4,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Pure Glint Clean",
-  description: "Privacy Policy for Pure Glint Clean residential cleaning services in North Fort Worth Area.",
+  title: "Privacy Policy",
+  description: "Privacy Policy for Pure Glint Clean residential cleaning services. Learn how we protect your personal information and data in North Fort Worth, TX.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://pureglintclean.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicy() {

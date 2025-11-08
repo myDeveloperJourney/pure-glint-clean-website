@@ -4,8 +4,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Pure Glint Clean",
-  description: "Terms of Service for Pure Glint Clean residential cleaning services in North Fort Worth Area.",
+  title: "Terms of Service",
+  description: "Terms of Service for Pure Glint Clean residential cleaning services. Read our service terms and conditions for North Fort Worth, TX.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://pureglintclean.com/terms-of-service",
+  },
 };
 
 export default function TermsOfService() {
