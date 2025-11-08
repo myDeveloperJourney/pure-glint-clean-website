@@ -9,21 +9,27 @@ const Process = () => {
       title: "Call or Select a Date",
       description: "Call (817) 405-7858 or use our online booking system to select a time that works best for you. Whether you need weekly, bi-weekly, or monthly cleaning, we've got you covered.",
       icon: PhoneIcon,
-      image: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "/cleaning-dogs.png",
+      width: 490,
+      height: 300
     },
     {
       id: 2,
       title: "Get a Free Quote",
       description: "Call (817) 405-7858 to speak with a team member or book online to receive a customized quote for your home. Once you book, you'll receive a finalized date & time for your cleaning.",
       icon: CreditCardIcon,
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "/cleaning-crew.png",
+      width: 490,
+      height: 300
     },
     {
       id: 3,
       title: "Enjoy a Clean Home",
       description: "Sit back, relax, and get ready to enjoy a clean and organized home. Our team of highly-skilled cleaners will take care of everything, leaving you with a spotless living space.",
       icon: HomeIcon,
-      image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "/cleaning-crew-three.jpeg",
+      width: 490,
+      height: 300
     }
   ];
 
@@ -91,11 +97,12 @@ const Process = () => {
                 <div className="relative">
                   <Image
                     className="relative mx-auto rounded-lg shadow-lg"
-                    width={490}
-                    height={300}
+                    width={step.width}
+                    height={step.height}
                     src={step.image}
-                    alt={step.title}
-                    priority
+                    alt={`${step.title} - Pure Glint Clean process step ${step.id}`}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 490px"
                   />
                 </div>
               </div>
@@ -120,10 +127,12 @@ const Process = () => {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {features.map((feature) => (
               <div key={feature.name} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
-                  <feature.icon className="h-6 w-6" aria-hidden="true" />
+                <div className="flex items-center mb-4">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white mr-3 flex-shrink-0">
+                    <feature.icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <h4 className="text-lg font-medium text-gray-900">{feature.name}</h4>
                 </div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">{feature.name}</h4>
                 <p className="text-gray-500">{feature.description}</p>
               </div>
             ))}

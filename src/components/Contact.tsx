@@ -33,12 +33,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Contact Us</h2>
-          <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-blue-600 sm:text-4xl">
             Book Your Free Cleaning Quote
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
@@ -66,7 +65,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div id="contact" className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
             
