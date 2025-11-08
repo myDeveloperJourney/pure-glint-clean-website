@@ -68,14 +68,16 @@ const Hero = () => {
           <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
             <div className="absolute inset-0">
               <Image
-                className="h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Professional cleaning team with smiling faces"
-                width={2070}
-                height={1380}
+                className="h-full w-full object-cover object-center md:object-[center_27%]"
+                src="/cleaning-crew-two.jpg"
+                alt="Professional Pure Glint Clean team with smiling faces"
+                width={1024}
+                height={683}
                 priority
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1280px"
               />
-              <div className="absolute inset-0 bg-blue-600 mix-blend-multiply opacity-40" />
+              <div className="absolute inset-0 bg-blue-600 mix-blend-multiply opacity-70" />
             </div>
             <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
               <h2 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -88,7 +90,7 @@ const Hero = () => {
               <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                 <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                   <a
-                    href="#contact"
+                    href="#pricing"
                     className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue-600 shadow-md hover:bg-blue-50 transition-colors"
                   >
                     Get Free Estimate

@@ -5,18 +5,18 @@ import Logo from "./Logo";
 const Footer = () => {
   const navigation = {
     services: [
-      { name: "Standard Cleaning", href: "#services" },
-      { name: "Deep Cleaning", href: "#services" },
-      { name: "Move In/Out Services", href: "#services" },
-      { name: "Short Term Rentals", href: "#services" },
-      { name: "Post Construction", href: "#services" },
-      { name: "Vacation Homes", href: "#services" },
+      { name: "Standard Cleaning", href: "#pricing" },
+      { name: "Deep Cleaning", href: "#pricing" },
+      { name: "Move In/Out Services", href: "#pricing" },
+      // { name: "Short Term Rentals", href: "#services" },
+      // { name: "Post Construction", href: "#services" },
+      // { name: "Vacation Homes", href: "#services" },
     ],
     company: [
-      { name: "About Us", href: "#about" },
+      // { name: "About Us", href: "#about" },
+      // { name: "Services", href: "#services" },
       { name: "Our Process", href: "#process" },
-      { name: "Services", href: "#services" },
-      { name: "Pricing", href: "#pricing" },
+      { name: "Services & Pricing", href: "#pricing" },
       { name: "Contact", href: "#contact" },
     ],
     legal: [
@@ -25,6 +25,7 @@ const Footer = () => {
     ],
     serviceAreas: [
       "North Fort Worth Area",
+      "More Service Areas Coming Soon",
     ],
   };
 
@@ -118,7 +119,7 @@ const Footer = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 border-t border-gray-800 pt-12">
+        {/* <div className="mt-16 border-t border-gray-800 pt-12">
           <div className="bg-blue-600 rounded-2xl px-6 py-8 sm:px-12 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Experience Pure Glint Clean?
@@ -143,7 +144,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Section */}
         <div className="mt-12 border-t border-gray-800 pt-8">

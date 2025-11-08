@@ -73,7 +73,9 @@ const About = () => {
                   width={490}
                   height={490}
                   src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Professional cleaning team"
+                  alt="Pure Glint Clean professional cleaning team providing residential cleaning services in North Fort Worth"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 490px"
                 />
                 
                 {/* Stats overlay */}

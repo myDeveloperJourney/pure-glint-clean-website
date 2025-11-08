@@ -61,9 +61,11 @@ const Services = () => {
                 <Image
                   className="w-full h-full object-cover"
                   src={service.image}
-                  alt={service.name}
+                  alt={`${service.name} - Professional residential cleaning by Pure Glint Clean in North Fort Worth`}
                   width={400}
                   height={200}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                 />
                 <div className="absolute inset-0 bg-blue-600 bg-opacity-20"></div>
               </div>
