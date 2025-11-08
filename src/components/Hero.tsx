@@ -6,8 +6,8 @@ const Hero = () => {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-            <span className="block">Professional Home Cleaning</span>
-            <span className="block text-blue-600">in North Fort Worth</span>
+            <span className="block">Professional Home Cleaning in</span>
+            <span className="block text-blue-600">North Texas</span>
           </h1>
           <p className="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
             Experience exceptional residential cleaning services that give you more time for what matters most.

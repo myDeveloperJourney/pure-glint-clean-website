@@ -44,11 +44,6 @@ const Process = () => {
       description: "Easily leave instructions, notes, or messages for our crew assigned to your appointments, ensuring a smooth and efficient service.",
       icon: ChatBubbleLeftRightIcon,
     },
-    // {
-    //   name: "Earn Rewards",
-    //   description: "Love Pure Glint Clean's service? Spread the word and earn $50 in credits for each home you refer to us, contributing to your next cleaning.",
-    //   icon: GiftIcon,
-    // },
     {
       name: "Full Transparency",
       description: "Whether you're at home or away, you'll have access to real-time updates on our arrival, cleaning progress, and departure.",
@@ -75,14 +70,13 @@ const Process = () => {
             <div key={step.id} className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className={stepIndex % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mr-4">
-                    <span className="text-xl font-bold">{step.id}</span>
+                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 mr-3 flex-shrink-0">
+                    <step.icon className="h-6 w-6 text-white" />
                   </div>
-                  <step.icon className="h-8 w-8 text-blue-500" />
+                  <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+                    {step.title}
+                  </h3>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl mb-4">
-                  {step.title}
-                </h3>
                 <p className="text-lg text-gray-500 mb-6">
                   {step.description}
                 </p>
