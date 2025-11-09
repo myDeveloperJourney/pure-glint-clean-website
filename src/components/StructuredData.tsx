@@ -47,7 +47,7 @@ export default function StructuredData() {
       }
     ],
     "sameAs": [
-      "https://www.facebook.com/pureglintclean",
+      "https://www.facebook.com/people/Pure-Glint-Clean/61581037222808",
       "https://www.instagram.com/pureglintclean"
     ],
     "aggregateRating": {
