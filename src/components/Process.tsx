@@ -1,54 +1,35 @@
-import { PhoneIcon, HomeIcon, CheckCircleIcon, CreditCardIcon, ChatBubbleLeftRightIcon, GiftIcon, EyeIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon, CreditCardIcon, HomeIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-// Removed unused imports: Link and CalendarIcon
 
 const Process = () => {
   const steps = [
     {
       id: 1,
-      title: "Call or Select a Date",
-      description: "Call (817) 405-7858 or use our online booking system to select a time that works best for you. Whether you need weekly, bi-weekly, or monthly cleaning, we've got you covered.",
+      title: "Complete Booking Form",
+      description: "Provide your contact information through our secure online form, or give us a call at (817) 405-7858. We respect your privacy and only use your information to contact you about your booking—we never share it with anyone.",
       icon: PhoneIcon,
       image: "/cleaning-dogs.png",
-      width: 490,
-      height: 300
+      cta: "Book Online",
+      ctaHref: "#booking"
     },
     {
       id: 2,
-      title: "Get a Free Quote",
-      description: "Call (817) 405-7858 to speak with a team member or book online to receive a customized quote for your home. Once you book, you'll receive a finalized date & time for your cleaning.",
+      title: "Get Your Free Quote",
+      description: "We'll reach out to provide a customized quote for your home and confirm your appointment date and time. Transparent pricing with no hidden fees.",
       icon: CreditCardIcon,
       image: "/cleaning-crew.png",
-      width: 490,
-      height: 300
+      cta: "Get Started",
+      ctaHref: "#booking"
     },
     {
       id: 3,
       title: "Enjoy a Clean Home",
-      description: "Sit back, relax, and get ready to enjoy a clean and organized home. Our team of highly-skilled cleaners will take care of everything, leaving you with a spotless living space.",
+      description: "Sit back, relax, and get ready to enjoy a spotless home. Our team of highly-skilled cleaners will take care of everything, leaving you with a pristine living space.",
       icon: HomeIcon,
       image: "/cleaning-crew-three.jpeg",
-      width: 490,
-      height: 300
+      cta: "Book Now",
+      ctaHref: "#booking"
     }
-  ];
-
-  const features = [
-    {
-      name: "Tailored Cleaning",
-      description: "You know your home best, so simply inform us of your cleaning needs and preferences, and we'll create a customized plan for you.",
-      icon: CheckCircleIcon,
-    },
-    {
-      name: "Talk to the Crew",
-      description: "Easily leave instructions, notes, or messages for our crew assigned to your appointments, ensuring a smooth and efficient service.",
-      icon: ChatBubbleLeftRightIcon,
-    },
-    {
-      name: "Full Transparency",
-      description: "Whether you're at home or away, you'll have access to real-time updates on our arrival, cleaning progress, and departure.",
-      icon: EyeIcon,
-    },
   ];
 
   return (
@@ -58,7 +39,7 @@ const Process = () => {
         <div className="text-center mb-16">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">How It Works</h2>
           <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Receive a Free Cleaning Quote for Your Home
+            3 Simple Steps to a Cleaner Home
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
             You are one call away from transforming your beautiful home into a clean paradise.
@@ -67,32 +48,32 @@ const Process = () => {
 
         <div className="space-y-16">
           {steps.map((step, stepIndex) => (
-            <div key={step.id} className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div key={step.id} className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
               <div className={stepIndex % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 mr-3 flex-shrink-0">
-                    <step.icon className="h-6 w-6 text-white" />
+                <div className="flex items-center mb-6">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 text-white mr-4 flex-shrink-0 text-2xl font-bold">
+                    {step.id}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl">
                     {step.title}
                   </h3>
                 </div>
-                <p className="text-lg text-gray-500 mb-6">
+                <p className="text-lg text-gray-600 mb-8">
                   {step.description}
                 </p>
                 <a
-                  href={step.id === 1 ? "tel:8174057858" : "#booking"}
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                  href={step.ctaHref}
+                  className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-md"
                 >
-                  {step.id === 1 ? "Call Now" : step.id === 2 ? "Get Quote" : "Book Cleaning"}
+                  {step.cta}
                 </a>
               </div>
               <div className={`mt-10 lg:mt-0 ${stepIndex % 2 === 1 ? "lg:order-1" : ""}`}>
                 <div className="relative">
                   <Image
-                    className="relative mx-auto rounded-lg shadow-lg"
-                    width={step.width}
-                    height={step.height}
+                    className="relative mx-auto rounded-lg shadow-xl"
+                    width={490}
+                    height={300}
                     src={step.image}
                     alt={`${step.title} - Pure Glint Clean process step ${step.id}`}
                     quality={85}
@@ -102,63 +83,6 @@ const Process = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Technology features */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-              Our Easy Booking Technology
-            </h3>
-            <p className="mt-4 text-lg text-gray-500 max-w-3xl mx-auto">
-              At Pure Glint Clean, we provide genuine personalization for your home cleaning services, 
-              granting you complete control over booking details and scheduling. With just a click, 
-              you can effortlessly opt for an extensive cleaning this month or include laundry and 
-              dishwashing services in your upcoming appointment.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-            {features.map((feature) => (
-              <div key={feature.name} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white mr-3 flex-shrink-0">
-                    <feature.icon className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900">{feature.name}</h4>
-                </div>
-                <p className="text-gray-500">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 bg-blue-600 rounded-2xl px-6 py-12 sm:px-12">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Ready to Get Started?
-            </h3>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied customers who trust Pure Glint Clean with their homes. 
-              Experience the difference of professional cleaning services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:8174057858"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors"
-              >
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call (817) 405-7858
-              </a>
-              <a
-                href="#booking"
-                className="inline-flex items-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                Book Online
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

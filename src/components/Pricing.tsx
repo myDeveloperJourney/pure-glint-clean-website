@@ -82,10 +82,10 @@ const Pricing = () => {
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500 text-white">
-                    <StarIcon className="h-4 w-4 mr-1" />
-                    Most Popular
+                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-blue-600 text-white shadow-lg">
+                    <StarIcon className="h-5 w-5 mr-1" />
+                    MOST POPULAR
                   </div>
                 </div>
               )}
@@ -114,14 +114,14 @@ const Pricing = () => {
                 <div className="mt-8">
                   <a
                     href="#booking"
-                    className={`w-full flex items-center justify-center px-6 py-3 rounded-md text-base font-medium transition-colors ${
+                    className={`w-full flex items-center justify-center px-6 py-4 rounded-md text-base font-semibold transition-colors shadow-md ${
                       tier.popular
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "bg-blue-100 text-blue-600 hover:bg-blue-200"
+                        ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg"
+                        : "bg-blue-600 text-white hover:bg-blue-700"
                     }`}
                   >
                     {tier.cta}
-                    <ArrowRightIcon className="ml-2 h-4 w-4" />
+                    <ArrowRightIcon className="ml-2 h-5 w-5" />
                   </a>
                 </div>
               </div>

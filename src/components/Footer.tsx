@@ -51,7 +51,38 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900">
+    <>
+      {/* Pre-Footer CTA Banner */}
+      {/* <section className="bg-blue-600 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">
+              Ready to Experience Pure Glint Clean?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Join our satisfied customers who trust us with their homes. Book your cleaning today!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:8174057858"
+                className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors shadow-lg"
+              >
+                <PhoneIcon className="h-6 w-6 mr-2" />
+                (817) 405-7858
+              </a>
+              <a
+                href="#booking"
+                className="inline-flex items-center px-8 py-4 border-2 border-white text-lg font-semibold rounded-md text-white hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                BOOK ONLINE
+              </a>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Main Footer */}
+      <footer className="bg-gray-900">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 xl:gap-16">
@@ -218,6 +249,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

@@ -30,19 +30,18 @@ const Header = () => {
   ];
 
   const navigation = [
-    { name: "Home", href: "/home" },
-    { name: "Services & Pricing", href: "#pricing" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "#pricing" },
     { name: "Contact", href: "#contact" },
-    { name: "Process", href: "#process" },
   ];
 
   return (
-    <header className="bg-white shadow-sm fixed w-full top-0 z-50">
+    <header className="bg-white shadow-md fixed w-full top-0 z-50">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between border-b border-blue-500 py-1 lg:border-none">
+        <div className="flex w-full items-center justify-between py-2 lg:py-1">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Logo width={700} height={225} priority={true} className="h-28 w-auto sm:h-32" />
+              <Logo width={700} height={225} priority={true} className="h-20 w-auto sm:h-24" />
             </Link>
           </div>
           <div className="ml-10 hidden space-x-8 lg:block">
@@ -56,36 +55,19 @@ const Header = () => {
               </a>
             ))}
           </div>
-          <div className="ml-10 hidden lg:flex lg:items-center lg:space-x-4">
-            {/* Social Media Icons */}
-            <div className="flex items-center space-x-3 mr-4 border-r border-gray-300 pr-4">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-blue-600 transition-colors"
-                  aria-label={`Follow Pure Glint Clean on ${item.name}`}
-                >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-5 w-5" aria-hidden="true" />
-                </a>
-              ))}
-            </div>
-            
+          <div className="ml-10 hidden lg:flex lg:items-center lg:space-x-3">
             <a
               href="tel:8174057858"
-              className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center rounded-md bg-blue-600 px-5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors whitespace-nowrap"
             >
-              <PhoneIcon className="h-4 w-4 mr-2" />
+              <PhoneIcon className="h-5 w-5 mr-2" />
               (817) 405-7858
             </a>
             <Link
               href="#booking"
-              className="inline-flex items-center rounded-md border border-blue-600 bg-white px-4 py-2 text-sm font-medium text-blue-600 shadow-sm hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center rounded-md bg-blue-700 px-6 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition-colors whitespace-nowrap"
             >
-              Book Now
+              BOOK ONLINE
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -136,17 +118,17 @@ const Header = () => {
                 <div className="py-6 space-y-4">
                   <a
                     href="tel:8174057858"
-                    className="flex w-full items-center justify-center rounded-md bg-blue-600 px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                    className="flex w-full items-center justify-center rounded-md bg-blue-600 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
                   >
-                    <PhoneIcon className="h-4 w-4 mr-2" />
-                    Call (817) 405-7858
+                    <PhoneIcon className="h-5 w-5 mr-2" />
+                    (817) 405-7858
                   </a>
                   <Link
                     href="#booking"
-                    className="flex w-full items-center justify-center rounded-md border border-blue-600 bg-white px-3 py-2.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-50"
+                    className="flex w-full items-center justify-center rounded-md bg-blue-700 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Book Now
+                    BOOK ONLINE
                   </Link>
                 </div>
               </div>
