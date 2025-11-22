@@ -78,21 +78,22 @@ export async function appendToSheet(data: {
 
     console.log('Successfully appended row to Google Sheet');
     return response.data;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error appending to Google Sheet:', error);
     
     // More detailed error logging
-    if (error.response) {
-      console.error('Response status:', error.response.status);
-      console.error('Response data:', error.response.data);
+    const errorObj = error as { response?: { status?: number; data?: unknown }; code?: number; message?: string };
+    if (errorObj.response) {
+      console.error('Response status:', errorObj.response.status);
+      console.error('Response data:', errorObj.response.data);
     }
     
     // Provide more helpful error messages
-    if (error.code === 403) {
+    if (errorObj.code === 403) {
       throw new Error('Permission denied. Make sure the service account has Editor access to the sheet.');
-    } else if (error.code === 404) {
+    } else if (errorObj.code === 404) {
       throw new Error('Spreadsheet not found. Check your GOOGLE_SHEET_ID.');
-    } else if (error.message?.includes('not supported')) {
+    } else if (errorObj.message?.includes('not supported')) {
       throw new Error('Sheet format not supported. Make sure it\'s a Google Sheet (not Excel).');
     }
     

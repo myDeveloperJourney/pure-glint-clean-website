@@ -175,21 +175,22 @@ export async function sendBookingNotification(data: {
 
     console.log('✅ Resend API response:', result);
     return result;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('❌ Error sending email notification:', error);
+    const errorObj = error as { message?: string; statusCode?: number; name?: string };
     console.error('Error details:', {
-      message: error.message,
-      statusCode: error.statusCode,
-      name: error.name,
+      message: errorObj.message,
+      statusCode: errorObj.statusCode,
+      name: errorObj.name,
     });
     
     // Provide more helpful error messages
-    if (error.statusCode === 403 || error.statusCode === 401) {
+    if (errorObj.statusCode === 403 || errorObj.statusCode === 401) {
       throw new Error('Invalid Resend API key. Check your RESEND_API_KEY in .env.local');
-    } else if (error.message?.includes('Invalid recipient')) {
+    } else if (errorObj.message?.includes('Invalid recipient')) {
       throw new Error(`Invalid recipient email: ${recipientEmail}`);
     }
     
-    throw new Error(`Failed to send email notification: ${error.message}`);
+    throw new Error(`Failed to send email notification: ${errorObj.message}`);
   }
 }
