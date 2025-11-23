@@ -43,7 +43,7 @@ const Testimonials = ({ variant = 'default' }: TestimonialsProps) => {
             Our Reviews
           </h2>
           <p className="mt-4 text-xl text-gray-600">
-            See What Customers Are Saying About Pure Glint Clean
+            See What Customers Are Saying About Us
           </p>
           <div className="flex items-center justify-center mt-4">
             <div className="flex items-center">

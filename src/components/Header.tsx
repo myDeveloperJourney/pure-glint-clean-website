@@ -2,17 +2,24 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import Logo from "./Logo";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  const navigation = [
+  const allNavigation = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "#pricing" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: "/#booking" },
+    { name: "Contact", href: "/#booking" },
   ];
+
+  // Filter out "Home" link when on homepage
+  const navigation = pathname === "/" 
+    ? allNavigation.filter(item => item.name !== "Home")
+    : allNavigation;
 
   return (
     <header className="bg-white shadow-md fixed w-full top-0 z-50">

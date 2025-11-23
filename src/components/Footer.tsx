@@ -26,19 +26,19 @@ const Footer = () => {
 
   const navigation = {
     services: [
-      { name: "Standard Cleaning", href: "#pricing" },
-      { name: "Deep Cleaning", href: "#pricing" },
-      { name: "Move In/Out Services", href: "#pricing" },
-      // { name: "Short Term Rentals", href: "#services" },
-      // { name: "Post Construction", href: "#services" },
-      // { name: "Vacation Homes", href: "#services" },
+      { name: "Standard Cleaning", href: "#booking" },
+      { name: "Deep Cleaning", href: "#booking" },
+      { name: "Move In/Out Services", href: "#booking" },
+      { name: "Short Term Rentals", href: "#booking" },
+      { name: "Post Construction", href: "#booking" },
+      { name: "Vacation Homes", href: "#booking" },
     ],
     company: [
       // { name: "About Us", href: "#about" },
       // { name: "Services", href: "#services" },
       { name: "Our Process", href: "#process" },
-      { name: "Services & Pricing", href: "#pricing" },
-      { name: "Contact", href: "#contact" },
+      { name: "Services & Pricing", href: "#booking" },
+      { name: "Contact", href: "#booking" },
     ],
     legal: [
       { name: "Privacy Policy", href: "/privacy-policy" },
@@ -52,35 +52,6 @@ const Footer = () => {
 
   return (
     <>
-      {/* Pre-Footer CTA Banner */}
-      {/* <section className="bg-blue-600 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">
-              Ready to Experience Pure Glint Clean?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join our satisfied customers who trust us with their homes. Book your cleaning today!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:8174057858"
-                className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors shadow-lg"
-              >
-                <PhoneIcon className="h-6 w-6 mr-2" />
-                (817) 405-7858
-              </a>
-              <a
-                href="#booking"
-                className="inline-flex items-center px-8 py-4 border-2 border-white text-lg font-semibold rounded-md text-white hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                BOOK ONLINE
-              </a>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Main Footer */}
       <footer className="bg-gray-900">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
@@ -191,40 +162,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* CTA Section */}
-        {/* <div className="mt-16 border-t border-gray-800 pt-12">
-          <div className="bg-blue-600 rounded-2xl px-6 py-8 sm:px-12 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Experience Pure Glint Clean?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Become one of our satisfied customers who trust us with their homes. 
-              Get your free quote today!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:8174057858"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors"
-              >
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call (817) 405-7858
-              </a>
-              <a
-                href="#booking"
-                className="inline-flex items-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                Book Free Quote
-              </a>
-            </div>
-          </div>
-        </div> */}
-
         {/* Bottom Section */}
         <div className="mt-12 border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm">
-              © 2025 Pure Glint Clean Home Cleaning. All Rights Reserved.
+              © {new Date().getFullYear()} Pure Glint Clean Home Cleaning. All Rights Reserved.
             </div>
             <div className="mt-4 md:mt-0 flex space-x-6">
               {navigation.legal.map((item) => (
