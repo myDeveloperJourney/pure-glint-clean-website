@@ -4,7 +4,7 @@ const TrustBadges = () => {
   const badges = [
     {
       icon: ShieldCheckIcon,
-      label: "Licensed & Insured",
+      label: "Insured & Bonded",
     },
     {
       icon: CheckCircleIcon,
@@ -21,7 +21,7 @@ const TrustBadges = () => {
       {badges.map((badge, index) => (
         <div key={index} className="flex flex-col items-center text-center">
           <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 mb-3">
-            <badge.icon className="h-6 w-6 text-blue-600" />
+            <badge.icon className="h-14 w-14 text-blue-600" />
           </div>
           <p className="text-sm font-medium text-gray-700">{badge.label}</p>
         </div>

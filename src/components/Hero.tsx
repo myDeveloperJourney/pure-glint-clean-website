@@ -12,9 +12,8 @@ const Hero = () => {
             Let Us Give You A 5 Star Experience.
           </p>
           <p className="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg">
-            Professional home cleaning services in North Fort Worth
+            Professional Home Cleaning Services
           </p>
-          
           <div className="mx-auto mt-8 max-w-md sm:flex sm:justify-center sm:max-w-2xl md:mt-10">
             <div className="rounded-md shadow-lg">
               <a

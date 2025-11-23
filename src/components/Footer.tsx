@@ -184,7 +184,7 @@ const Footer = () => {
           {/* Additional Info */}
           <div className="mt-6 text-center md:text-left">
             <p className="text-gray-500 text-xs">
-              Licensed, bonded, and insured. Professional residential cleaning services 
+              Bonded, and insured. Professional residential cleaning services 
               serving the North Fort Worth area.
             </p>
           </div>
