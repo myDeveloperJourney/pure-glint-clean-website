@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { appendToSheet } from '@/lib/google-sheets';
-import { sendBookingNotification } from '@/lib/email';
+import { appendApplicationToSheet } from '@/lib/google-sheets';
+import { sendApplicationNotification } from '@/lib/email';
 import { checkRateLimit } from '@/lib/rate-limit';
 
 // Email validation regex
@@ -39,20 +39,34 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { firstName, lastName, email, phone, serviceType, honeypot } = body;
+    const { 
+      firstName, 
+      lastName, 
+      email, 
+      phone, 
+      hasDriversLicense,
+      hasReliableVehicle,
+      liveInFortWorth,
+      availableMonFri,
+      hasVehicleInsurance,
+      hasConviction,
+      honeypot 
+    } = body;
 
     // Honeypot check - if filled, it's likely a bot
     if (honeypot) {
       console.log('Honeypot triggered - potential spam submission');
       // Return success to fool bots, but don't save data
       return NextResponse.json(
-        { success: true, message: 'Thank you for your booking!' },
+        { success: true, message: 'Thank you for your application!' },
         { status: 200 }
       );
     }
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !phone || !serviceType) {
+    if (!firstName || !lastName || !email || !phone || 
+        !hasDriversLicense || !hasReliableVehicle || !liveInFortWorth || 
+        !availableMonFri || !hasVehicleInsurance || !hasConviction) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -89,12 +103,36 @@ export async function POST(request: NextRequest) {
       lastName: lastName.trim().slice(0, 50),
       email: email.trim().toLowerCase().slice(0, 100),
       phone: phone.trim().slice(0, 20),
-      serviceType: serviceType.trim().slice(0, 50),
+      hasDriversLicense: hasDriversLicense.trim().toLowerCase(),
+      hasReliableVehicle: hasReliableVehicle.trim().toLowerCase(),
+      liveInFortWorth: liveInFortWorth.trim().toLowerCase(),
+      availableMonFri: availableMonFri.trim().toLowerCase(),
+      hasVehicleInsurance: hasVehicleInsurance.trim().toLowerCase(),
+      hasConviction: hasConviction.trim().toLowerCase(),
     };
 
+    // Check for disqualifying conditions
+    // If any of these conditions are met, show success but don't save to Google Sheets or send email
+    const isDisqualified = 
+      sanitizedData.hasDriversLicense === 'no' ||
+      sanitizedData.hasReliableVehicle === 'no' ||
+      sanitizedData.hasVehicleInsurance === 'no' ||
+      sanitizedData.hasConviction === 'yes';
+
+    if (isDisqualified) {
+      console.log('Application does not meet requirements - showing success but not saving');
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'Thank you for your application! We have received your information and will review it carefully.',
+        },
+        { status: 200 }
+      );
+    }
+
     // Check environment variables
-    if (!process.env.GOOGLE_SHEET_ID) {
-      console.error('GOOGLE_SHEET_ID not configured');
+    if (!process.env.GOOGLE_APPLICATIONS_SHEET_ID) {
+      console.error('GOOGLE_APPLICATIONS_SHEET_ID not configured');
       return NextResponse.json(
         { error: 'Service configuration error. Please contact support.' },
         { status: 500 }
@@ -109,28 +147,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Save to Google Sheets
+    // Save to Google Sheets (only if qualified)
     try {
-      await appendToSheet(sanitizedData);
-      console.log('✅ Booking saved to Google Sheets');
+      await appendApplicationToSheet(sanitizedData);
+      console.log('✅ Application saved to Google Sheets');
     } catch (error) {
       console.error('❌ Google Sheets error:', error);
       return NextResponse.json(
-        { error: 'Failed to save booking. Please try again or call us directly.' },
+        { error: 'Failed to save application. Please try again or call us directly.' },
         { status: 500 }
       );
     }
 
-    // Send email notification
+    // Send email notification (only if qualified)
     try {
       console.log('📧 Attempting to send email notification...');
-      const emailResult = await sendBookingNotification(sanitizedData);
+      const emailResult = await sendApplicationNotification(sanitizedData);
       console.log('✅ Email notification sent successfully:', emailResult);
     } catch (error) {
       console.error('❌ Email notification error:', error);
       // Don't fail the request if email fails - data is already saved
-      // But log it prominently so you know emails aren't working
-      console.warn('⚠️  WARNING: Booking saved but email notification FAILED!');
+      console.warn('⚠️  WARNING: Application saved but email notification FAILED!');
       console.warn('⚠️  Check your RESEND_API_KEY and email configuration');
     }
 
@@ -138,7 +175,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Thank you! We\'ll contact you shortly to confirm your booking and $50 voucher.',
+        message: 'Thank you for your application! We\'ll review it and contact you soon to discuss the next steps.',
       },
       { 
         status: 200,
@@ -151,7 +188,7 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    console.error('Booking API error:', error);
+    console.error('Application API error:', error);
     return NextResponse.json(
       { error: 'An unexpected error occurred. Please try again.' },
       { status: 500 }

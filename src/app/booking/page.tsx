@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from "@heroicons/react/24/outline";
 import type { Metadata } from "next";
+import Header from "../../components/Header";
 
 export const metadata: Metadata = {
   title: "Book Your Cleaning Service Online",
@@ -55,7 +56,9 @@ export default function BookNowPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-blue-100 pt-32 pb-16">
+      <Header />
+      {/* Booking Form Section */}
+      <section className="bg-gradient-to-br from-blue-50 to-blue-100 pt-32 pb-16 mt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
@@ -67,8 +70,6 @@ export default function BookNowPage() {
           </div>
         </div>
       </section>
-
-      {/* Booking Form Section */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Booking Koala Embedded Form */}

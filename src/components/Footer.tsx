@@ -29,6 +29,8 @@ const Footer = () => {
       { name: "Standard Cleaning", href: "#booking" },
       { name: "Deep Cleaning", href: "#booking" },
       { name: "Move In/Out Services", href: "#booking" },
+    ],
+    additionalServices: [
       { name: "Short Term Rentals", href: "#booking" },
       { name: "Post Construction", href: "#booking" },
       { name: "Vacation Homes", href: "#booking" },
@@ -112,11 +114,26 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">
+            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2">
               Our Services
             </h3>
             <ul className="space-y-3">
               {navigation.services.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2 mt-7">
+              Additional Services
+            </h3>
+            <ul className="space-y-3">
+              {navigation.additionalServices.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}

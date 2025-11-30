@@ -24,7 +24,7 @@ const Pricing = () => {
       name: "Deep Home Cleaning",
       price: 205,
       priceLabel: "starting at",
-      duration: "3-4 Hour Cleanings",
+      duration: "4-7 Hour Cleanings",
       description: "Our most popular service - comprehensive cleaning that reaches every detail.",
       features: [
         "Everything in Standard Cleaning",
@@ -39,7 +39,7 @@ const Pricing = () => {
       popular: true
     },
     {
-      name: "Move Out Cleaning",
+      name: "Move In/Out Cleaning",
       price: 280,
       priceLabel: "starting at",
       duration: "4-5 Hour Cleanings",
@@ -62,12 +62,12 @@ const Pricing = () => {
     <section id="pricing" className="py-16 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Pricing</h2>
+          {/* <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Pricing</h2> */}
           <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Pure Glint Clean Pricing Packages
+            Pure Glint Clean Residential Cleaning Services
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Transparent pricing with no hidden fees. Choose the cleaning level that works best for your home and budget.
+            We offer a cleaning level that works best for your home.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const Pricing = () => {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`relative rounded-2xl shadow-lg ${
+              className={`relative rounded-2xl shadow-lg flex flex-col h-full ${
                 tier.popular
                   ? "ring-2 ring-blue-500 bg-blue-50"
                   : "bg-white"
@@ -90,19 +90,19 @@ const Pricing = () => {
                 </div>
               )}
               
-              <div className="p-8">
+              <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-2xl font-semibold text-gray-900">{tier.name}</h3>
                 <p className="mt-2 text-gray-600">{tier.duration}</p>
                 <p className="mt-4 text-gray-500">{tier.description}</p>
                 
                 <div className="mt-6">
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-bold text-gray-900">${tier.price}</span>
-                    <span className="ml-1 text-xl font-medium text-gray-500">/{tier.priceLabel}</span>
+                    {/* <span className="text-4xl font-bold text-gray-900">${tier.price}</span> */}
+                    {/* <span className="ml-1 text-xl font-medium text-gray-500">/{tier.priceLabel}</span> */}
                   </div>
                 </div>
 
-                <ul className="mt-8 space-y-3">
+                <ul className="mt-8 space-y-3 flex-grow">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start">
                       <CheckIcon className="h-5 w-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />

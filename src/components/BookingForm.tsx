@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const BookingForm = () => {
     lastName: "",
     email: "",
     phone: "",
+    serviceType: "",
     honeypot: "", // Hidden field for spam protection
   });
 
@@ -46,6 +48,7 @@ const BookingForm = () => {
           lastName: "",
           email: "",
           phone: "",
+          serviceType: "",
           honeypot: "",
         });
 
@@ -77,9 +80,16 @@ const BookingForm = () => {
     });
   };
 
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <section id="booking" className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-10 text-center">
@@ -94,8 +104,22 @@ const BookingForm = () => {
             </div>
           </div>
 
-          {/* Form */}
-          <div className="px-8 py-10">
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Left Column - Dog Photo */}
+            <div className="relative h-64 lg:h-auto">
+              <Image
+                src="/cleaning-dogs.png"
+                alt="Pure Glint Clean team mascots - friendly dogs representing our trusted and reliable cleaning service"
+                fill
+                className="object-cover object-[center_15%]"
+                quality={85}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+
+            {/* Right Column - Form */}
+            <div className="px-8 py-10">
             {/* Success Message */}
             {submitStatus.type === "success" && (
               <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-start">
@@ -216,6 +240,34 @@ const BookingForm = () => {
                 />
               </div>
 
+              {/* Service Type Selection */}
+              <div>
+                <label
+                  htmlFor="serviceType"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  Service Interested In <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="serviceType"
+                  name="serviceType"
+                  value={formData.serviceType}
+                  onChange={handleSelectChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 bg-white"
+                  disabled={isSubmitting}
+                >
+                  <option value="">Select a service...</option>
+                  <option value="standard-clean">Standard Clean</option>
+                  <option value="deep-clean">Deep Clean</option>
+                  <option value="move-in-out">Move In/Out Clean</option>
+                  <option value="short-term-rental">Short Term Rental</option>
+                  <option value="post-construction">Post Construction</option>
+                  <option value="vacation-homes">Vacation Homes</option>
+                  <option value="not-sure">Not Sure - Let Us Make a Recommendation</option>
+                </select>
+              </div>
+
               {/* Submit Button */}
               <button
                 type="submit"
@@ -257,6 +309,7 @@ const BookingForm = () => {
                 We respect your privacy and will never share your information.
               </p>
             </form>
+            </div>
           </div>
 
           {/* Footer CTA */}

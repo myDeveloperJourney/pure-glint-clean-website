@@ -1,17 +1,35 @@
 import TrustBadges from "./TrustBadges";
+import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-blue-50 to-blue-100 pt-32 sm:pt-40">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
+    <section id="home" className="relative bg-gradient-to-br from-blue-50 to-blue-100 pt-32 sm:pt-40 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <div className="w-full h-full transform translate-y-[10%]">
+          <Image
+            src="/cleaning-crew.png"
+            alt="Pure Glint Clean professional cleaning crew serving North Fort Worth"
+            fill
+            priority
+            quality={100}
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-blue-900 opacity-90"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
             <span className="block">We Clean. You Relax.</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-xl text-gray-600 sm:text-2xl">
+          <p className="mx-auto mt-4 max-w-2xl text-xl text-blue-50 sm:text-2xl">
             Let Us Give You A 5 Star Experience.
           </p>
-          <p className="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg">
+          <p className="mx-auto mt-3 max-w-md text-base text-blue-100 sm:text-lg">
             Professional Home Cleaning Services
           </p>
           <div className="mx-auto mt-8 max-w-md sm:flex sm:justify-center sm:max-w-2xl md:mt-10">
@@ -32,7 +50,6 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          
           <TrustBadges />
         </div>
       </div>

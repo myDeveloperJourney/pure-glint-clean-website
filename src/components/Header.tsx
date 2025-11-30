@@ -13,6 +13,7 @@ const Header = () => {
   const allNavigation = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#booking" },
+    { name: "Work with Us", href: "/work-with-us" },
     { name: "Contact", href: "/#booking" },
   ];
 
