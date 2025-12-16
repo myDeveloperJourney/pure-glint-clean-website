@@ -3,8 +3,14 @@
 import { useState, FormEvent } from "react";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const BookingForm = () => {
+interface BookingFormProps {
+  redirectOnSuccess?: string;
+}
+
+const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -37,11 +43,17 @@ const BookingForm = () => {
       const data = await response.json();
 
       if (response.ok) {
+        // If redirect is specified, navigate to that page
+        if (redirectOnSuccess) {
+          router.push(redirectOnSuccess);
+          return;
+        }
+
         setSubmitStatus({
           type: "success",
           message: data.message || "Thank you! We'll contact you shortly.",
         });
-        
+
         // Clear form
         setFormData({
           firstName: "",
