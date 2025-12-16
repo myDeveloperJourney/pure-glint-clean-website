@@ -21,7 +21,7 @@ export default function Success() {
                 Thank You!
               </h1>
               <p className="text-xl text-gray-700 mb-2">
-                We've received your quote request.
+                We&apos;ve received your quote request.
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 Our team will contact you shortly to discuss your cleaning needs and provide a personalized quote.
