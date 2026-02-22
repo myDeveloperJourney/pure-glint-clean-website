@@ -73,7 +73,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <PhoneIcon className="h-5 w-5 mr-3 text-blue-400" />
-                <a href="tel:8174057858" className="hover:text-white transition-colors">
+                <a href="tel:8174057858" aria-label="Call Pure Glint Clean at (817) 405-7858" className="hover:text-white transition-colors">
                   (817) 405-7858
                 </a>
               </div>

@@ -35,8 +35,31 @@ const Testimonials = ({ variant = 'default' }: TestimonialsProps) => {
   // For compact variant, show 3 reviews. For default, show all 4
   const displayedTestimonials = variant === 'compact' ? testimonials.slice(0, 3) : testimonials;
 
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://pureglintclean.com/#organization",
+    "review": testimonials.map((testimonial) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": testimonial.name,
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": testimonial.rating,
+        "bestRating": 5,
+      },
+      "reviewBody": testimonial.text,
+    })),
+  };
+
   return (
     <section className="py-16 bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

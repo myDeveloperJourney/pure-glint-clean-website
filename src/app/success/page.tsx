@@ -1,7 +1,16 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+export const metadata: Metadata = {
+  title: "Thank You",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function Success() {
   return (
@@ -34,6 +43,7 @@ export default function Success() {
                 </p>
                 <a
                   href="tel:8174057858"
+                  aria-label="Call Pure Glint Clean at (817) 405-7858"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg"
                 >
                   📞 (817) 405-7858

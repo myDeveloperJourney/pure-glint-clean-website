@@ -1,5 +1,3 @@
-import Script from 'next/script'
-
 export default function StructuredData() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -49,12 +47,7 @@ export default function StructuredData() {
     "sameAs": [
       "https://www.facebook.com/people/Pure-Glint-Clean/61581037222808",
       "https://www.instagram.com/pureglintclean"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "500"
-    }
+    ]
   }
 
   const serviceSchema = {
@@ -135,32 +128,23 @@ export default function StructuredData() {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Services",
-        "item": "https://pureglintclean.com/#services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Booking",
-        "item": "https://pureglintclean.com/booking"
+        "name": "Work with Us",
+        "item": "https://pureglintclean.com/work-with-us"
       }
     ]
   }
 
   return (
     <>
-      <Script
-        id="local-business-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      <Script
-        id="service-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <Script
-        id="breadcrumb-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />

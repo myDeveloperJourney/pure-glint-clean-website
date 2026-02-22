@@ -100,11 +100,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
-  verification: {
-    google: 'your-google-verification-code', // TODO: Add actual verification code from Google Search Console
-    // yandex: 'your-yandex-verification-code', // Optional
-    // bing: 'your-bing-verification-code', // Optional
-  },
+  // verification: {
+  //   google: 'your-google-verification-code', // TODO: Add actual verification code from Google Search Console
+  // },
   category: 'business',
 };
 

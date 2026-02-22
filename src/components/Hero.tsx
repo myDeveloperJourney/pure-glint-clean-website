@@ -44,6 +44,7 @@ const Hero = () => {
             <div className="mt-3 rounded-md shadow-lg sm:mt-0 sm:ml-4">
               <a
                 href="tel:8174057858"
+                aria-label="Call Pure Glint Clean at (817) 405-7858"
                 className="flex w-full items-center justify-center rounded-md border-2 border-blue-600 bg-white px-10 py-4 text-lg font-semibold text-blue-600 hover:bg-blue-50 transition-colors"
               >
                 (817) 405-7858
