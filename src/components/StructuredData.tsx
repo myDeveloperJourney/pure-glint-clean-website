@@ -4,7 +4,7 @@ export default function StructuredData() {
     "@type": "LocalBusiness",
     "@id": "https://pureglintclean.com/#organization",
     "name": "Pure Glint Clean",
-    "image": "https://pureglintclean.com/cleaning-crew-two.jpg",
+    "image": "https://pureglintclean.com/team-professional.jpg",
     "logo": "https://pureglintclean.com/pure_glint.svg",
     "url": "https://pureglintclean.com",
     "telephone": "+18174057858",

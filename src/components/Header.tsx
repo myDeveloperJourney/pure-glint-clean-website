@@ -12,7 +12,7 @@ const Header = () => {
 
   const allNavigation = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/#booking" },
+    { name: "Services", href: "/#pricing" },
     { name: "Work with Us", href: "/work-with-us" },
     { name: "Contact", href: "/#booking" },
   ];
@@ -45,6 +45,7 @@ const Header = () => {
           <div className="ml-10 hidden lg:flex lg:items-center lg:space-x-3">
             <a
               href="tel:8174057858"
+              aria-label="Call Pure Glint Clean at (817) 405-7858"
               className="inline-flex items-center rounded-md bg-blue-600 px-5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors whitespace-nowrap"
             >
               <PhoneIcon className="h-5 w-5 mr-2" />
@@ -105,6 +106,7 @@ const Header = () => {
                 <div className="py-6 space-y-4">
                   <a
                     href="tel:8174057858"
+                    aria-label="Call Pure Glint Clean at (817) 405-7858"
                     className="flex w-full items-center justify-center rounded-md bg-blue-600 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
                   >
                     <PhoneIcon className="h-5 w-5 mr-2" />

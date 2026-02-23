@@ -130,7 +130,7 @@ const Pricing = () => {
         </div>
 
         {/* Additional pricing info */}
-        {/* <div className="mt-16 bg-gray-50 rounded-2xl p-8">
+        <div className="mt-16 bg-gray-50 rounded-2xl p-8">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Pricing Information
@@ -149,24 +149,21 @@ const Pricing = () => {
               <div className="text-left">
                 <h4 className="font-semibold text-gray-900 mb-2">Discounts available:</h4>
                 <ul className="text-gray-600 space-y-1 text-sm">
-                  <li>• 10% off weekly cleanings</li>
-                  <li>• 5% off bi-weekly cleanings</li>
-                  <li>• Senior & military discounts</li>
-                  <li>• Referral program rewards</li>
-                  <li>• First-time customer specials</li>
+                  <li>• Discounts for recurring service</li>
+                  <li>• Military discounts (active duty &amp; veterans)</li>
                 </ul>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-gray-200">
               <p className="text-gray-600">
-                All prices are estimates. Final pricing determined after free in-home consultation.
+                All prices are estimates. Final pricing determined after free consultation.
                 <span className="block mt-2 font-medium text-blue-600">
-                  Call <a href="tel:8174057858" className="hover:underline">(817) 405-7858</a> for exact quote.
+                  Call <a href="tel:8174057858" aria-label="Call Pure Glint Clean at (817) 405-7858" className="hover:underline">(817) 405-7858</a> for exact quote.
                 </span>
               </p>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

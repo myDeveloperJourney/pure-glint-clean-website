@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description: 'Top-rated residential cleaning services in North Fort Worth. Same-day service available. Fully insured & bonded. Free quotes. Book online today!',
     images: [
       {
-        url: '/cleaning-crew-two.jpg',
+        url: '/team-professional.jpg',
         width: 1200,
         height: 630,
         alt: 'Pure Glint Clean Professional Cleaning Team',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pure Glint Clean - Professional House Cleaning in North Fort Worth, TX',
     description: 'Top-rated residential cleaning services in North Fort Worth. Same-day service available. Fully insured & bonded.',
-    images: ['/cleaning-crew-two.jpg'],
+    images: ['/team-professional.jpg'],
     creator: '@pureglintclean',
   },
   robots: {

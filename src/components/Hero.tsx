@@ -8,8 +8,8 @@ const Hero = () => {
       <div className="absolute inset-0">
         <div className="w-full h-full transform translate-y-[10%]">
           <Image
-            src="/cleaning-crew.png"
-            alt="Pure Glint Clean professional cleaning crew serving North Fort Worth"
+            src="/hero-clean-home.jpg"
+            alt="Spotless modern kitchen — Pure Glint Clean residential cleaning services in North Fort Worth"
             fill
             priority
             quality={100}

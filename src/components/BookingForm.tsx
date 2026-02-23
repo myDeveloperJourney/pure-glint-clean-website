@@ -118,13 +118,13 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
 
           {/* Two Column Layout */}
           <div className="grid lg:grid-cols-2 gap-0">
-            {/* Left Column - Dog Photo */}
+            {/* Left Column - Clean Result Photo */}
             <div className="relative h-64 lg:h-auto">
               <Image
-                src="/cleaning-dogs.png"
-                alt="Pure Glint Clean team mascots - friendly dogs representing our trusted and reliable cleaning service"
+                src="/sparkling-bathroom.jpg"
+                alt="Sparkling clean bathroom — the results you can expect from Pure Glint Clean"
                 fill
-                className="object-cover object-[center_15%]"
+                className="object-cover"
                 quality={85}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -315,8 +315,13 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                 )}
               </button>
 
+              {/* Reassurance */}
+              <p className="text-sm text-gray-600 text-center mt-3 font-medium">
+                Free, no-obligation quote — no credit card required.
+              </p>
+
               {/* Privacy Note */}
-              <p className="text-sm text-gray-500 text-center mt-4">
+              <p className="text-sm text-gray-500 text-center mt-2">
                 By submitting, you agree to be contacted about your booking.
                 We respect your privacy and will never share your information.
               </p>
@@ -331,6 +336,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
             </p>
             <a
               href="tel:8174057858"
+              aria-label="Call Pure Glint Clean at (817) 405-7858"
               className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg"
             >
               📞 (817) 405-7858

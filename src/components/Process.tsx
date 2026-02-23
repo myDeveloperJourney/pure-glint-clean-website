@@ -8,7 +8,7 @@ const Process = () => {
       title: "Complete Booking Form",
       description: "Provide your contact information through our secure online form, or give us a call at (817) 405-7858. We respect your privacy and only use your information to contact you about your booking—we never share it with anyone.",
       icon: PhoneIcon,
-      image: "/cleaning-dogs.png",
+      image: "/booking-online.jpg",
       cta: "Book Online",
       ctaHref: "#booking"
     },
@@ -17,7 +17,7 @@ const Process = () => {
       title: "Get Your Free Quote",
       description: "We'll reach out to provide a customized quote for your home and confirm your appointment date and time. Transparent pricing with no hidden fees.",
       icon: CreditCardIcon,
-      image: "/cleaning-crew.png",
+      image: "/free-quote.jpg",
       cta: "Get Started",
       ctaHref: "#booking"
     },
@@ -26,7 +26,7 @@ const Process = () => {
       title: "Enjoy a Clean Home",
       description: "Sit back, relax, and get ready to enjoy a spotless home. Our team of highly-skilled cleaners will take care of everything, leaving you with a pristine living space.",
       icon: HomeIcon,
-      image: "/cleaning-crew-three.jpeg",
+      image: "/enjoy-clean-home.jpg",
       cta: "Book Now",
       ctaHref: "#booking"
     }
