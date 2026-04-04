@@ -47,11 +47,14 @@ const WhyChooseUs = () => {
 
           {/* Heading + Description */}
           <div>
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase mb-2">
+            <h2 className="text-base text-blue-600 text-center font-semibold tracking-wide uppercase mb-2">
               Why Choose Pure Glint Clean for Your Home Cleaning?
             </h2>
-            <p className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6">
-              5 Star Professional Cleaning Service
+            <p className="text-3xl font-bold text-gray-900 text-center sm:text-4xl mb-2">
+              5-Star Professional
+            </p>
+            <p className="text-3xl font-bold text-gray-900 text-center sm:text-4xl mb-6">
+              Cleaning Service
             </p>
             <p className="text-lg text-gray-600">
               Elevate the cleanliness of your property with our professional, top-notch
