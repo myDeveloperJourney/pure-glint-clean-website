@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "Pure Glint Clean - Professional House Cleaning in North Fort Worth, TX",
     template: "%s | Pure Glint Clean"
   },
-  description: "Pure Glint Clean provides exceptional residential cleaning services in North Fort Worth, Texas. Book your free quote today! Offering standard recurring cleaning, deep cleaning, and move-in/out services. Fully insured, bonded, and same-day service available.",
+  description: "Professional house cleaning in North Fort Worth, TX. Insured & bonded. Same-day service available. Deep cleaning, move-in/out & more. Free quotes!",
   keywords: [
     // Primary keywords
     "house cleaning North Fort Worth",
@@ -100,9 +100,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
-  // verification: {
-  //   google: 'your-google-verification-code', // TODO: Add actual verification code from Google Search Console
-  // },
+  // Google Search Console verified via Google Business Profile (auto-verified March 2026)
   category: 'business',
 };
 

@@ -106,7 +106,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-10 text-center">
             <h2 className="text-4xl font-bold text-white mb-3">
-              Book Online
+              Book Your Cleaning Online
             </h2>
             <p className="text-xl text-blue-100">
               Claim Your $50 Voucher By Booking Online

@@ -35,35 +35,15 @@ const Testimonials = ({ variant = 'default' }: TestimonialsProps) => {
   // For compact variant, show 3 reviews. For default, show all 4
   const displayedTestimonials = variant === 'compact' ? testimonials.slice(0, 3) : testimonials;
 
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://pureglintclean.com/#organization",
-    "review": testimonials.map((testimonial) => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": testimonial.name,
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": testimonial.rating,
-        "bestRating": 5,
-      },
-      "reviewBody": testimonial.text,
-    })),
-  };
+  // Reviews are now included in the main LocalBusiness schema in StructuredData.tsx
 
   return (
     <section className="py-16 bg-gray-50">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      {/* Review schema moved to StructuredData.tsx to avoid duplicate LocalBusiness blocks */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Our Reviews
+            Customer Reviews — 5-Star House Cleaning in Fort Worth
           </h2>
           <p className="mt-4 text-xl text-gray-600">
             See What Customers Are Saying About Us
