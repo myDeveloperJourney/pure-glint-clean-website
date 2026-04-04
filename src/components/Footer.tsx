@@ -129,7 +129,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2 mt-7">
+            {/* <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-2 mt-7">
               Additional Services
             </h3>
             <ul className="space-y-3">
@@ -143,7 +143,7 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
 
           {/* Company */}
