@@ -50,14 +50,14 @@ export async function appendToSheet(data: {
 
   const values = [
     [
-      timestamp,
+      `'${timestamp}`,
       firstName,
       lastName,
       data.email,
       data.phone,
       data.serviceType,
       'Yes', // Discount Claimed
-      'Yes - ' + timestamp, // SMS/Call Consent with timestamp
+      `'Yes - ${timestamp}`, // SMS/Call Consent with timestamp
     ],
   ];
 
@@ -140,7 +140,7 @@ export async function appendApplicationToSheet(data: {
 
   const values = [
     [
-      timestamp,
+      `'${timestamp}`,
       data.firstName,
       data.lastName,
       data.email,

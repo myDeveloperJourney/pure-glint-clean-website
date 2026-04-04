@@ -9,23 +9,35 @@
  */
 
 interface SendSmsOptions {
-  to: string;   // E.164 format phone number
-  name: string; // Full name — first name extracted for the greeting
+  to: string;          // E.164 format phone number
+  name: string;        // Full name — first name extracted for the greeting
+  serviceType: string; // Internal service type value (e.g. 'deep-clean')
 }
 
-function buildMessage(name: string): string {
+function getServiceDisplayName(serviceType: string): string {
+  const serviceNames: Record<string, string> = {
+    'standard-clean': 'Standard Clean',
+    'deep-clean': 'Deep Clean',
+    'move-in-out': 'Move In/Out Clean',
+  };
+  return serviceNames[serviceType] || serviceType;
+}
+
+function buildMessage(name: string, serviceType: string): string {
   const template = process.env.QUO_DEFAULT_MESSAGE ||
     "Hi {{name}}! Thanks for requesting your $50 off with Pure Glint Clean! 🧹✨ We'd love to learn more about your cleaning needs. What type of service are you looking for, and what's a good time to chat?";
 
   const firstName = name.trim().split(/\s+/)[0] || 'there';
-  return template.replace(/\{\{name\}\}/g, firstName);
+  return template
+    .replace(/\{\{name\}\}/g, firstName)
+    .replace(/\{\{service\}\}/g, getServiceDisplayName(serviceType));
 }
 
 async function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function sendSms({ to, name }: SendSmsOptions): Promise<void> {
+export async function sendSms({ to, name, serviceType }: SendSmsOptions): Promise<void> {
   const apiKey = process.env.QUO_API_KEY;
   const phoneNumberId = process.env.QUO_PHONE_NUMBER_ID;
 
@@ -36,7 +48,7 @@ export async function sendSms({ to, name }: SendSmsOptions): Promise<void> {
     throw new Error('QUO_PHONE_NUMBER_ID environment variable is not set');
   }
 
-  const content = buildMessage(name);
+  const content = buildMessage(name, serviceType);
   const maxRetries = 3;
   const delays = [1000, 2000, 4000]; // Exponential backoff
 

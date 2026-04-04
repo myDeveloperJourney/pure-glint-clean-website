@@ -109,7 +109,7 @@ export async function sendBookingNotification(data: {
           <body>
             <div class="header">
               <h1>🎉 New Quote Request Received!</h1>
-              <span class="badge">$50 Voucher Claimed</span>
+              <span class="badge">$50 New Customer Discount</span>
             </div>
             
             <div class="content">

@@ -138,6 +138,7 @@ export async function POST(request: NextRequest) {
         await sendSms({
           to: e164Phone,
           name: sanitizedData.name,
+          serviceType: sanitizedData.serviceType,
         });
         console.log('✅ Auto-text SMS sent successfully');
       } else {

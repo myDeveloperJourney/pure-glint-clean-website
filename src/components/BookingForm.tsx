@@ -346,6 +346,10 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                 We&apos;ll text you within minutes to schedule. Your information is secure
                 and will never be sold or shared. Reply STOP to opt out.
               </p>
+
+              <p className="text-xs text-gray-400 text-center mt-1">
+                *$50 new customer discount applied to your first cleaning. New customers only unless otherwise stated.
+              </p>
             </form>
             </div>
           </div>
