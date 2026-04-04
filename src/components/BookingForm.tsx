@@ -13,7 +13,6 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     serviceType: "",
     honeypot: "", // Hidden field for spam protection
@@ -57,7 +56,6 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
         // Clear form
         setFormData({
           name: "",
-          email: "",
           phone: "",
           serviceType: "",
           honeypot: "",
@@ -189,28 +187,6 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                   maxLength={100}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
                   placeholder="Your name"
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  maxLength={100}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
-                  placeholder="your.email@example.com"
                   disabled={isSubmitting}
                 />
               </div>

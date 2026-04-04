@@ -5,9 +5,6 @@ import { checkRateLimit } from '@/lib/rate-limit';
 import { sendSms } from '@/lib/sms';
 import { parseToE164 } from '@/lib/phone';
 
-// Email validation regex
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 // Phone validation regex (flexible format)
 const PHONE_REGEX = /^[\d\s\-\(\)\.+]{10,}$/;
 
@@ -41,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { name, email, phone, serviceType, honeypot, consent } = body;
+    const { name, phone, serviceType, honeypot, consent } = body;
 
     // Honeypot check - if filled, it's likely a bot
     if (honeypot) {
@@ -54,7 +51,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate required fields
-    if (!name || !email || !phone || !serviceType) {
+    if (!name || !phone || !serviceType) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -77,14 +74,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate email format
-    if (!EMAIL_REGEX.test(email)) {
-      return NextResponse.json(
-        { error: 'Please enter a valid email address' },
-        { status: 400 }
-      );
-    }
-
     // Validate phone format
     if (!PHONE_REGEX.test(phone)) {
       return NextResponse.json(
@@ -96,7 +85,6 @@ export async function POST(request: NextRequest) {
     // Sanitize inputs (basic XSS prevention)
     const sanitizedData = {
       name: name.trim().slice(0, 100),
-      email: email.trim().toLowerCase().slice(0, 100),
       phone: phone.trim().slice(0, 20),
       serviceType: serviceType.trim().slice(0, 50),
     };
@@ -120,7 +108,11 @@ export async function POST(request: NextRequest) {
 
     // Save to Google Sheets
     try {
-      await appendToSheet({ ...sanitizedData, consent: !!consent });
+      await appendToSheet({
+        ...sanitizedData,
+        email: '',
+        source: 'Website',
+      });
       console.log('✅ Booking saved to Google Sheets');
     } catch (error) {
       console.error('❌ Google Sheets error:', error);
@@ -131,15 +123,18 @@ export async function POST(request: NextRequest) {
     }
 
     // Send auto-text SMS via OpenPhone
+    let smsMessageText: string | null = null;
+    let smsSuccess = false;
     try {
       const e164Phone = parseToE164(sanitizedData.phone);
       if (e164Phone) {
         console.log(`📱 Sending auto-text to ${e164Phone}...`);
-        await sendSms({
+        smsMessageText = await sendSms({
           to: e164Phone,
           name: sanitizedData.name,
           serviceType: sanitizedData.serviceType,
         });
+        smsSuccess = true;
         console.log('✅ Auto-text SMS sent successfully');
       } else {
         console.warn(`⚠️ Could not parse phone number to E.164: "${sanitizedData.phone}" — skipping SMS`);
@@ -153,7 +148,11 @@ export async function POST(request: NextRequest) {
     // Send email notification
     try {
       console.log('📧 Attempting to send email notification...');
-      const emailResult = await sendBookingNotification(sanitizedData);
+      const emailResult = await sendBookingNotification({
+        ...sanitizedData,
+        smsMessageText,
+        smsSuccess,
+      });
       console.log('✅ Email notification sent successfully:', emailResult);
     } catch (error) {
       console.error('❌ Email notification error:', error);

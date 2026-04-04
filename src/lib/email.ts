@@ -4,9 +4,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendBookingNotification(data: {
   name: string;
-  email: string;
   phone: string;
   serviceType: string;
+  smsMessageText: string | null;
+  smsSuccess: boolean;
 }) {
   const recipientEmail = process.env.NOTIFICATION_EMAIL;
 
@@ -123,15 +124,6 @@ export async function sendBookingNotification(data: {
               </div>
 
               <div class="field">
-                <div class="label">Email Address</div>
-                <div class="value">
-                  <a href="mailto:${data.email}" style="color: #2563eb; text-decoration: none;">
-                    ${data.email}
-                  </a>
-                </div>
-              </div>
-
-              <div class="field">
                 <div class="label">Phone Number</div>
                 <div class="value">
                   <a href="tel:${data.phone}" style="color: #2563eb; text-decoration: none;">
@@ -156,6 +148,19 @@ export async function sendBookingNotification(data: {
                   hour: '2-digit',
                   minute: '2-digit',
                 })}</div>
+              </div>
+
+              <!-- SMS Confirmation -->
+              <div style="margin-top: 24px; padding: 20px; background: ${data.smsSuccess ? '#f0fdf4' : '#fef2f2'}; border-radius: 8px; border-left: 4px solid ${data.smsSuccess ? '#22c55e' : '#ef4444'};">
+                <div style="font-weight: 600; color: ${data.smsSuccess ? '#166534' : '#991b1b'}; font-size: 14px; margin-bottom: 8px;">
+                  ${data.smsSuccess ? '✅ Auto-Text Sent Successfully' : '❌ Auto-Text Failed to Send'}
+                </div>
+                ${data.smsMessageText ? `
+                  <div style="font-size: 13px; color: #6b7280; margin-bottom: 6px;">Message sent to ${data.phone}:</div>
+                  <div style="background: white; padding: 12px; border-radius: 6px; font-size: 14px; color: #374151; white-space: pre-wrap; line-height: 1.5;">${data.smsMessageText}</div>
+                ` : `
+                  <div style="font-size: 13px; color: #991b1b;">No SMS was sent — the phone number could not be parsed or the SMS service encountered an error. Follow up with this lead manually.</div>
+                `}
               </div>
 
               <div style="text-align: center; margin-top: 30px;">

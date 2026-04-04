@@ -37,7 +37,7 @@ async function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function sendSms({ to, name, serviceType }: SendSmsOptions): Promise<void> {
+export async function sendSms({ to, name, serviceType }: SendSmsOptions): Promise<string> {
   const apiKey = process.env.QUO_API_KEY;
   const phoneNumberId = process.env.QUO_PHONE_NUMBER_ID;
 
@@ -70,7 +70,7 @@ export async function sendSms({ to, name, serviceType }: SendSmsOptions): Promis
 
       if (res.ok) {
         console.log(`✅ SMS sent successfully to ${to} (attempt ${attempt})`);
-        return;
+        return content;
       }
 
       const errorBody = await res.text();
