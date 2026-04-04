@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       console.log('Honeypot triggered - potential spam submission');
       // Return success to fool bots, but don't save data
       return NextResponse.json(
-        { success: true, message: 'Thank you for your booking!' },
+        { success: true, message: 'Thank you for your quote request!' },
         { status: 200 }
       );
     }
@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
     } catch (error) {
       console.error('❌ Google Sheets error:', error);
       return NextResponse.json(
-        { error: 'Failed to save booking. Please try again or call us directly.' },
+        { error: 'Failed to submit your request. Please try again or call us directly.' },
         { status: 500 }
       );
     }

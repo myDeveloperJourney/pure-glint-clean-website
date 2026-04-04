@@ -41,7 +41,7 @@ const LocalStory = () => {
                 href="#booking"
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors"
               >
-                Book Online
+                Get a Free Quote
               </a>
             </div>
           </div>

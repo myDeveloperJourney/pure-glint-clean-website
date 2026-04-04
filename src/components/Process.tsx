@@ -5,11 +5,11 @@ const Process = () => {
   const steps = [
     {
       id: 1,
-      title: "Complete Our Form",
-      description: "Provide your contact information through our secure online form, or give us a call at (817) 405-7858. We respect your privacy and only use your information to contact you about a quote, we never share it with anyone.",
+      title: "Request a Free Quote",
+      description: "Submit your information through our secure online form for a free quote, or give us a call at (817) 405-7858. We respect your privacy and only use your information to contact you about your quote — we never share it with anyone.",
       icon: PhoneIcon,
       image: "/booking-online.jpg",
-      cta: "Book Online",
+      cta: "Get a Quote",
       ctaHref: "#booking"
     },
     {
@@ -27,7 +27,7 @@ const Process = () => {
       description: "Sit back, relax, and get ready to enjoy a spotless home. Our team of highly-skilled cleaners will take care of everything, leaving you with a pristine living space.",
       icon: HomeIcon,
       image: "/enjoy-clean-home.jpg",
-      cta: "Book Now",
+      cta: "Get Started",
       ctaHref: "#booking"
     }
   ];

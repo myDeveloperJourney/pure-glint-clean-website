@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Get a Free Quote - House Cleaning in North Fort Worth",
   description:
-    "Request a free quote for professional house cleaning services in North Fort Worth, TX. Standard, deep cleaning, and move-in/out services available. Book online today!",
+    "Request a free quote for professional house cleaning services in North Fort Worth, TX. Standard, deep cleaning, and move-in/out services available. Request your free quote online!",
   openGraph: {
     title: "Get a Free Quote | Pure Glint Clean",
     description:

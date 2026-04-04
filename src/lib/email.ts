@@ -28,7 +28,7 @@ export async function sendBookingNotification(data: {
     const result = await resend.emails.send({
       from: 'Pure Glint Clean <onboarding@resend.dev>', // Use Resend's test domain
       to: recipientEmail,
-      subject: '🎉 New Booking from Pure Glint Clean Website',
+      subject: '🎉 New Quote Request from Pure Glint Clean Website',
       html: `
         <!DOCTYPE html>
         <html>
@@ -109,13 +109,13 @@ export async function sendBookingNotification(data: {
           </head>
           <body>
             <div class="header">
-              <h1>🎉 New Booking Received!</h1>
+              <h1>🎉 New Quote Request Received!</h1>
               <span class="badge">$50 Voucher Claimed</span>
             </div>
             
             <div class="content">
               <p style="font-size: 16px; color: #1f2937; margin-bottom: 20px;">
-                A new customer has submitted a booking request through your website.
+                A new customer has submitted a quote request through your website.
               </p>
 
               <div class="field">
@@ -166,7 +166,7 @@ export async function sendBookingNotification(data: {
               </div>
 
               <div class="footer">
-                <p>This booking has been automatically saved to your Google Sheet.</p>
+                <p>This quote request has been automatically saved to your Google Sheet.</p>
                 <p style="margin-top: 10px;">
                   <strong>Pure Glint Clean</strong><br>
                   Professional Home Cleaning Services<br>

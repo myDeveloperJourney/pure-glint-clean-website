@@ -115,10 +115,10 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-10 text-center">
             <h2 className="text-4xl font-bold text-white mb-3">
-              Book Your Cleaning Online
+              Request Your Free Quote
             </h2>
             <p className="text-xl text-blue-100">
-              Claim Your $50 New Customer Discount By Booking Online
+              Claim Your $50 New Customer Discount With Your Free Quote
             </p>
             <div className="mt-4 inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-semibold text-lg shadow-lg">
               🎁 Limited Time Offer!
@@ -357,7 +357,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                     Submitting...
                   </span>
                 ) : (
-                  "Book Online - Claim Your $50 Discount"
+                  "Get My Free Quote"
                 )}
               </button>
 

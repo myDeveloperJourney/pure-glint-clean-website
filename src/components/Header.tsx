@@ -55,7 +55,7 @@ const Header = () => {
               href="#booking"
               className="inline-flex items-center rounded-md bg-blue-700 px-6 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition-colors whitespace-nowrap"
             >
-              BOOK ONLINE
+              GET A FREE QUOTE
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -117,7 +117,7 @@ const Header = () => {
                     className="flex w-full items-center justify-center rounded-md bg-blue-700 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    BOOK ONLINE
+                    GET A FREE QUOTE
                   </Link>
                 </div>
               </div>

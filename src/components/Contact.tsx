@@ -38,7 +38,7 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-blue-600 sm:text-4xl">
-            Book Your Free Cleaning Quote
+            Request Your Free Cleaning Quote
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
             Ready to experience the Pure Glint Clean difference? Get your free, no-obligation quote today.
@@ -53,7 +53,7 @@ const Contact = () => {
                 src="https://pureglintclean.bookingkoala.com/booknow?embed=true" 
                 style={{ border: 'none', width: '100%', minHeight: '1000px' }}
                 scrolling="no"
-                title="Pure Glint Clean Booking Form"
+                title="Pure Glint Clean Quote Request Form"
               />
               <Script 
                 src="https://pureglintclean.bookingkoala.com/resources/embed.js" 

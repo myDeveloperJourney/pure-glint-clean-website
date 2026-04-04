@@ -17,7 +17,7 @@ const Pricing = () => {
         "Trash removal",
         "Basic organizing"
       ],
-      cta: "Book a Standard Clean",
+      cta: "Get a Standard Clean Quote",
       popular: false
     },
     {
@@ -35,7 +35,7 @@ const Pricing = () => {
         "Detailed dusting of all surfaces",
         "Cabinet front cleaning"
       ],
-      cta: "Book a Deep Home Cleaning",
+      cta: "Get a Deep Clean Quote",
       popular: true
     },
     {
@@ -53,7 +53,7 @@ const Pricing = () => {
         "Switch plate and outlet cleaning",
         "Final walkthrough included"
       ],
-      cta: "Book a Move Out Cleaning",
+      cta: "Get a Move-Out Quote",
       popular: false
     }
   ];

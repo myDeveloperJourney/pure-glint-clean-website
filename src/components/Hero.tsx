@@ -39,7 +39,7 @@ const Hero = () => {
                 href="#booking"
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-10 py-4 text-lg font-semibold text-white hover:bg-blue-700 transition-colors shadow-xl"
               >
-                Book Online
+                Get a Free Quote
               </a>
             </div>
             <div className="mt-3 rounded-md shadow-lg sm:mt-0 sm:ml-4">
