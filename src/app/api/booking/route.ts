@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { appendToSheet } from '@/lib/google-sheets';
 import { sendBookingNotification } from '@/lib/email';
 import { checkRateLimit } from '@/lib/rate-limit';
+import { sendSms } from '@/lib/sms';
+import { parseToE164 } from '@/lib/phone';
 
 // Email validation regex
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -127,6 +129,25 @@ export async function POST(request: NextRequest) {
         { error: 'Failed to save booking. Please try again or call us directly.' },
         { status: 500 }
       );
+    }
+
+    // Send auto-text SMS via OpenPhone
+    try {
+      const e164Phone = parseToE164(sanitizedData.phone);
+      if (e164Phone) {
+        console.log(`📱 Sending auto-text to ${e164Phone}...`);
+        await sendSms({
+          to: e164Phone,
+          firstName: sanitizedData.firstName,
+        });
+        console.log('✅ Auto-text SMS sent successfully');
+      } else {
+        console.warn(`⚠️ Could not parse phone number to E.164: "${sanitizedData.phone}" — skipping SMS`);
+      }
+    } catch (error) {
+      // SMS failure should NOT block the booking — data is already saved
+      console.error('❌ Auto-text SMS error:', error);
+      console.warn('⚠️ WARNING: Booking saved but auto-text SMS FAILED!');
     }
 
     // Send email notification
