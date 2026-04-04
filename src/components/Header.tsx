@@ -14,7 +14,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/#pricing" },
     { name: "Work with Us", href: "/work-with-us" },
-    { name: "Contact", href: "/#booking" },
+    // { name: "Contact", href: "/#booking" },
   ];
 
   // Filter out "Home" link when on homepage
