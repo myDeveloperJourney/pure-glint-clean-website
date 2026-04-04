@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { firstName, lastName, email, phone, serviceType, honeypot, consent } = body;
+    const { name, email, phone, serviceType, honeypot, consent } = body;
 
     // Honeypot check - if filled, it's likely a bot
     if (honeypot) {
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !phone || !serviceType) {
+    if (!name || !email || !phone || !serviceType) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -70,9 +70,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate field lengths
-    if (firstName.length > 50 || lastName.length > 50) {
+    if (name.length > 100) {
       return NextResponse.json(
-        { error: 'Name fields must be less than 50 characters' },
+        { error: 'Name must be less than 100 characters' },
         { status: 400 }
       );
     }
@@ -95,8 +95,7 @@ export async function POST(request: NextRequest) {
 
     // Sanitize inputs (basic XSS prevention)
     const sanitizedData = {
-      firstName: firstName.trim().slice(0, 50),
-      lastName: lastName.trim().slice(0, 50),
+      name: name.trim().slice(0, 100),
       email: email.trim().toLowerCase().slice(0, 100),
       phone: phone.trim().slice(0, 20),
       serviceType: serviceType.trim().slice(0, 50),
@@ -138,7 +137,7 @@ export async function POST(request: NextRequest) {
         console.log(`📱 Sending auto-text to ${e164Phone}...`);
         await sendSms({
           to: e164Phone,
-          firstName: sanitizedData.firstName,
+          name: sanitizedData.name,
         });
         console.log('✅ Auto-text SMS sent successfully');
       } else {

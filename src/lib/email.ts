@@ -3,8 +3,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendBookingNotification(data: {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   phone: string;
   serviceType: string;
@@ -22,7 +21,7 @@ export async function sendBookingNotification(data: {
   }
 
   console.log(`📧 Sending email to: ${recipientEmail}`);
-  console.log(`📋 Customer: ${data.firstName} ${data.lastName}`);
+  console.log(`📋 Customer: ${data.name}`);
 
   try {
     const result = await resend.emails.send({
@@ -120,7 +119,7 @@ export async function sendBookingNotification(data: {
 
               <div class="field">
                 <div class="label">Customer Name</div>
-                <div class="value">${data.firstName} ${data.lastName}</div>
+                <div class="value">${data.name}</div>
               </div>
 
               <div class="field">

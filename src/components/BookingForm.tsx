@@ -12,8 +12,7 @@ interface BookingFormProps {
 const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     phone: "",
     serviceType: "",
@@ -57,8 +56,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
 
         // Clear form
         setFormData({
-          firstName: "",
-          lastName: "",
+          name: "",
           email: "",
           phone: "",
           serviceType: "",
@@ -173,46 +171,24 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                 aria-hidden="true"
               />
 
-              {/* First Name */}
+              {/* Name */}
               <div>
                 <label
-                  htmlFor="firstName"
+                  htmlFor="name"
                   className="block text-sm font-semibold text-gray-700 mb-2"
                 >
-                  First Name <span className="text-red-500">*</span>
+                  Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
+                  id="name"
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
-                  maxLength={50}
+                  maxLength={100}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
-                  placeholder="Enter your first name"
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              {/* Last Name */}
-              <div>
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Last Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  required
-                  maxLength={50}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
-                  placeholder="Enter your last name"
+                  placeholder="Your name"
                   disabled={isSubmitting}
                 />
               </div>

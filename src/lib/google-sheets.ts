@@ -21,8 +21,7 @@ export async function getGoogleSheetsClient() {
 
 // Append a row to the spreadsheet
 export async function appendToSheet(data: {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   phone: string;
   serviceType: string;
@@ -45,11 +44,15 @@ export async function appendToSheet(data: {
     second: '2-digit',
   });
 
+  const nameParts = data.name.trim().split(/\s+/);
+  const firstName = nameParts[0] || '';
+  const lastName = nameParts.slice(1).join(' ') || '';
+
   const values = [
     [
       timestamp,
-      data.firstName,
-      data.lastName,
+      firstName,
+      lastName,
       data.email,
       data.phone,
       data.serviceType,

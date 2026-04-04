@@ -9,23 +9,23 @@
  */
 
 interface SendSmsOptions {
-  to: string;        // E.164 format phone number
-  firstName: string; // For personalizing the message
+  to: string;   // E.164 format phone number
+  name: string; // Full name — first name extracted for the greeting
 }
 
-function buildMessage(firstName: string): string {
+function buildMessage(name: string): string {
   const template = process.env.QUO_DEFAULT_MESSAGE ||
     "Hi {{name}}! Thanks for requesting your $50 off with Pure Glint Clean! 🧹✨ We'd love to learn more about your cleaning needs. What type of service are you looking for, and what's a good time to chat?";
 
-  const name = firstName.trim() || 'there';
-  return template.replace(/\{\{name\}\}/g, name);
+  const firstName = name.trim().split(/\s+/)[0] || 'there';
+  return template.replace(/\{\{name\}\}/g, firstName);
 }
 
 async function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function sendSms({ to, firstName }: SendSmsOptions): Promise<void> {
+export async function sendSms({ to, name }: SendSmsOptions): Promise<void> {
   const apiKey = process.env.QUO_API_KEY;
   const phoneNumberId = process.env.QUO_PHONE_NUMBER_ID;
 
@@ -36,7 +36,7 @@ export async function sendSms({ to, firstName }: SendSmsOptions): Promise<void> 
     throw new Error('QUO_PHONE_NUMBER_ID environment variable is not set');
   }
 
-  const content = buildMessage(firstName);
+  const content = buildMessage(name);
   const maxRetries = 3;
   const delays = [1000, 2000, 4000]; // Exponential backoff
 
