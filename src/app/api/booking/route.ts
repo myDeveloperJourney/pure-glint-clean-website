@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { firstName, lastName, email, phone, serviceType, honeypot } = body;
+    const { firstName, lastName, email, phone, serviceType, honeypot, consent } = body;
 
     // Honeypot check - if filled, it's likely a bot
     if (honeypot) {
@@ -55,6 +55,14 @@ export async function POST(request: NextRequest) {
     if (!firstName || !lastName || !email || !phone || !serviceType) {
       return NextResponse.json(
         { error: 'All fields are required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate consent
+    if (!consent) {
+      return NextResponse.json(
+        { error: 'You must agree to receive communications to submit this form.' },
         { status: 400 }
       );
     }
@@ -111,7 +119,7 @@ export async function POST(request: NextRequest) {
 
     // Save to Google Sheets
     try {
-      await appendToSheet(sanitizedData);
+      await appendToSheet({ ...sanitizedData, consent: !!consent });
       console.log('✅ Booking saved to Google Sheets');
     } catch (error) {
       console.error('❌ Google Sheets error:', error);

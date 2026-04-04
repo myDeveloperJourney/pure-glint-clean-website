@@ -26,6 +26,7 @@ export async function appendToSheet(data: {
   email: string;
   phone: string;
   serviceType: string;
+  consent?: boolean;
 }) {
   const sheets = await getGoogleSheetsClient();
   const spreadsheetId = process.env.GOOGLE_SHEET_ID;
@@ -53,6 +54,7 @@ export async function appendToSheet(data: {
       data.phone,
       data.serviceType,
       'Yes', // Voucher Claimed
+      'Yes - ' + timestamp, // SMS/Call Consent with timestamp
     ],
   ];
 
@@ -70,7 +72,7 @@ export async function appendToSheet(data: {
     // Append to the sheet using the correct sheet name
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${firstSheetName}!A:G`,
+      range: `${firstSheetName}!A:H`,
       valueInputOption: 'USER_ENTERED',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {

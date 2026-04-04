@@ -18,6 +18,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
     phone: "",
     serviceType: "",
     honeypot: "", // Hidden field for spam protection
+    consent: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,6 +63,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
           phone: "",
           serviceType: "",
           honeypot: "",
+          consent: false,
         });
 
         // Auto-hide success message after 8 seconds
@@ -89,6 +91,13 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.checked,
     });
   };
 
@@ -280,6 +289,47 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                 </select>
               </div>
 
+              {/* SMS/Call Consent */}
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  checked={formData.consent}
+                  onChange={handleCheckboxChange}
+                  required
+                  className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"
+                  disabled={isSubmitting}
+                />
+                <label
+                  htmlFor="consent"
+                  className="text-xs text-gray-600 leading-relaxed"
+                >
+                  By checking this box, I agree to receive text messages and/or phone calls
+                  from Pure Glint Clean at the number provided regarding my cleaning request.
+                  Message &amp; data rates may apply. Message frequency varies. Reply STOP to
+                  opt out at any time. This consent is not a condition of purchase. View our{" "}
+                  <a
+                    href="/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline hover:text-blue-700"
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="/terms-of-service"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline hover:text-blue-700"
+                  >
+                    Terms of Service
+                  </a>
+                  .
+                </label>
+              </div>
+
               {/* Submit Button */}
               <button
                 type="submit"
@@ -320,10 +370,9 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                 Free, no-obligation quote — no credit card required.
               </p>
 
-              {/* Privacy Note */}
-              <p className="text-sm text-gray-500 text-center mt-2">
-                By submitting, you agree to be contacted about your booking.
-                We respect your privacy and will never share your information.
+              <p className="text-xs text-gray-500 text-center mt-2">
+                We&apos;ll text you within minutes to schedule. Your information is secure
+                and will never be sold or shared. Reply STOP to opt out.
               </p>
             </form>
             </div>
