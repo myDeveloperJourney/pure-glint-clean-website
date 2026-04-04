@@ -167,7 +167,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Thank you! We\'ll contact you shortly to confirm your booking and $50 voucher.',
+        message: 'Thank you! We\'ll contact you shortly about your quote and $50 discount',
       },
       { 
         status: 200,

@@ -24,11 +24,14 @@ const Hero = () => {
       <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            <span className="block">Professional House Cleaning</span>
-            <span className="block text-blue-200">in North Fort Worth, TX</span>
+            <span className="block">Professional House Cleaning in</span>
+            <span className="block text-blue-200">North Fort Worth, TX</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-xl text-blue-50 sm:text-2xl">
-            We Clean. You Relax. — Let Us Give You a 5-Star Experience.
+            We Clean. You Relax.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-xl text-blue-50 sm:text-2xl">
+            Let Us Give You a 5-Star Experience.
           </p>
           <div className="mx-auto mt-8 max-w-md sm:flex sm:justify-center sm:max-w-2xl md:mt-10">
             <div className="rounded-md shadow-lg">

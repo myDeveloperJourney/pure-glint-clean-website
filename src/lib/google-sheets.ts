@@ -53,7 +53,7 @@ export async function appendToSheet(data: {
       data.email,
       data.phone,
       data.serviceType,
-      'Yes', // Voucher Claimed
+      'Yes', // Discount Claimed
       'Yes - ' + timestamp, // SMS/Call Consent with timestamp
     ],
   ];

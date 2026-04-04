@@ -5,8 +5,8 @@ const Process = () => {
   const steps = [
     {
       id: 1,
-      title: "Complete Booking Form",
-      description: "Provide your contact information through our secure online form, or give us a call at (817) 405-7858. We respect your privacy and only use your information to contact you about your booking—we never share it with anyone.",
+      title: "Complete Our Form",
+      description: "Provide your contact information through our secure online form, or give us a call at (817) 405-7858. We respect your privacy and only use your information to contact you about a quote, we never share it with anyone.",
       icon: PhoneIcon,
       image: "/booking-online.jpg",
       cta: "Book Online",

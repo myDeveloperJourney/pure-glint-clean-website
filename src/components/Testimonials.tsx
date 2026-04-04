@@ -43,7 +43,10 @@ const Testimonials = ({ variant = 'default' }: TestimonialsProps) => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Customer Reviews — 5-Star House Cleaning in Fort Worth
+            Customer Reviews
+          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            5-Star House Cleaning in Fort Worth
           </h2>
           <p className="mt-4 text-xl text-gray-600">
             See What Customers Are Saying About Us

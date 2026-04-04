@@ -118,7 +118,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
               Book Your Cleaning Online
             </h2>
             <p className="text-xl text-blue-100">
-              Claim Your $50 Voucher By Booking Online
+              Claim Your $50 New Customer Discount By Booking Online
             </p>
             <div className="mt-4 inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-semibold text-lg shadow-lg">
               🎁 Limited Time Offer!
@@ -357,7 +357,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                     Submitting...
                   </span>
                 ) : (
-                  "Book Online - Claim Your $50 Voucher"
+                  "Book Online - Claim Your $50 Discount"
                 )}
               </button>
 
