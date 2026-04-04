@@ -17,7 +17,7 @@ export default function Home() {
         <Testimonials variant="default" />
         <Pricing />
         <Process />
-        <BookingForm />
+        <BookingForm redirectOnSuccess="/thank-you" />
       </main>
       <Footer />
     </div>

@@ -26,6 +26,7 @@ export async function appendToSheet(data: {
   phone: string;
   serviceType: string;
   source: string;
+  optedIn: string;
 }) {
   const sheets = await getGoogleSheetsClient();
   const spreadsheetId = process.env.GOOGLE_SHEET_ID;
@@ -57,7 +58,7 @@ export async function appendToSheet(data: {
       data.phone,
       data.serviceType,
       'Yes', // Discount Claimed
-      `'Yes - ${timestamp}`, // SMS/Call Consent with timestamp
+      `'${data.optedIn}`, // H: Opted-In consent timestamp
       data.source,
     ],
   ];

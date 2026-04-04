@@ -16,8 +16,10 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
     phone: "",
     serviceType: "",
     honeypot: "", // Hidden field for spam protection
-    consent: false,
   });
+
+  const [smsConsent, setSmsConsent] = useState(false);
+  const [termsConsent, setTermsConsent] = useState(false);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -36,7 +38,11 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          smsConsent,
+          termsConsent,
+        }),
       });
 
       const data = await response.json();
@@ -59,8 +65,9 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
           phone: "",
           serviceType: "",
           honeypot: "",
-          consent: false,
         });
+        setSmsConsent(false);
+        setTermsConsent(false);
 
         // Auto-hide success message after 8 seconds
         setTimeout(() => {
@@ -87,13 +94,6 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.checked,
     });
   };
 
@@ -237,46 +237,39 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                 </select>
               </div>
 
-              {/* SMS/Call Consent */}
-              <div className="flex items-start gap-3">
+              {/* SMS Consent */}
+              <label className="flex items-start gap-2.5 cursor-pointer">
                 <input
                   type="checkbox"
-                  id="consent"
-                  name="consent"
-                  checked={formData.consent}
-                  onChange={handleCheckboxChange}
                   required
-                  className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"
-                  disabled={isSubmitting}
+                  checked={smsConsent}
+                  onChange={(e) => setSmsConsent(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 />
-                <label
-                  htmlFor="consent"
-                  className="text-xs text-gray-600 leading-relaxed"
-                >
-                  By checking this box, I agree to receive text messages and/or phone calls
-                  from Pure Glint Clean at the number provided regarding my cleaning request.
-                  Message &amp; data rates may apply. Message frequency varies. Reply STOP to
-                  opt out at any time. This consent is not a condition of purchase. View our{" "}
-                  <a
-                    href="/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline hover:text-blue-700"
-                  >
-                    Privacy Policy
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="/terms-of-service"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline hover:text-blue-700"
-                  >
-                    Terms of Service
-                  </a>
-                  .
-                </label>
-              </div>
+                <span className="text-xs leading-relaxed text-gray-500">
+                  I agree to receive text messages (SMS) at the phone number provided.
+                  Message &amp; data rates may apply. Message frequency varies. Reply
+                  STOP to opt out at any time. Reply HELP for assistance. We will never
+                  sell, share, or spam your number.
+                </span>
+              </label>
+
+              {/* Terms & Privacy Consent */}
+              <label className="flex items-start gap-2.5 cursor-pointer">
+                <input
+                  type="checkbox"
+                  required
+                  checked={termsConsent}
+                  onChange={(e) => setTermsConsent(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                />
+                <span className="text-xs leading-relaxed text-gray-500">
+                  I have read and agree to the{' '}
+                  <a href="/privacy-policy" target="_blank" className="text-blue-600 underline hover:text-blue-700">Privacy Policy</a>
+                  {' '}and{' '}
+                  <a href="/terms-of-service" target="_blank" className="text-blue-600 underline hover:text-blue-700">Terms of Service</a>.
+                </span>
+              </label>
 
               {/* Submit Button */}
               <button
@@ -318,10 +311,6 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                 Free, no-obligation quote, no credit card required.
               </p>
 
-              <p className="text-xs text-gray-500 text-center mt-2">
-                We&apos;ll text you within minutes to schedule. Your information is secure
-                and will never be sold or shared. Reply STOP to opt out.
-              </p>
 
               <p className="text-xs text-gray-400 text-center mt-1">
                 *$50 new customer discount applied to your first cleaning. New customers only unless otherwise stated.

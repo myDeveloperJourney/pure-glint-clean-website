@@ -32,7 +32,7 @@ export default function GetQuote() {
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-24">
-        <BookingForm redirectOnSuccess="/success" />
+        <BookingForm redirectOnSuccess="/thank-you" />
       </main>
       <Footer />
     </div>

@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { name, phone, serviceType, honeypot, consent } = body;
+    const { name, phone, serviceType, honeypot, smsConsent, termsConsent } = body;
 
     // Honeypot check - if filled, it's likely a bot
     if (honeypot) {
@@ -59,9 +59,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate consent
-    if (!consent) {
+    if (!smsConsent || !termsConsent) {
       return NextResponse.json(
-        { error: 'You must agree to receive communications to submit this form.' },
+        { error: 'You must agree to SMS consent and Terms of Service to continue.' },
         { status: 400 }
       );
     }
@@ -108,10 +108,20 @@ export async function POST(request: NextRequest) {
 
     // Save to Google Sheets
     try {
+      const consentTimestamp = `Yes - ${new Date().toLocaleString('en-US', {
+        timeZone: 'America/Chicago',
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      })}`;
       await appendToSheet({
         ...sanitizedData,
         email: '',
         source: 'Website',
+        optedIn: consentTimestamp,
       });
       console.log('✅ Booking saved to Google Sheets');
     } catch (error) {
