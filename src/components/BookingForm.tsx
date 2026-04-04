@@ -339,7 +339,7 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
 
               {/* Reassurance */}
               <p className="text-sm text-gray-600 text-center mt-3 font-medium">
-                Free, no-obligation quote — no credit card required.
+                Free, no-obligation quote, no credit card required.
               </p>
 
               <p className="text-xs text-gray-500 text-center mt-2">
