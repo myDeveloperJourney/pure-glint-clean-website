@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Thank You | Pure Glint Clean",
@@ -11,9 +9,7 @@ export const metadata: Metadata = {
 
 export default function ThankYou() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main className="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-blue-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
         <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-12 text-center">
             <CheckCircleIcon className="h-16 w-16 text-green-500 mx-auto mb-6" />
@@ -50,8 +46,6 @@ export default function ThankYou() {
             </Link>
           </div>
         </div>
-      </main>
-      <Footer />
     </div>
   );
 }
