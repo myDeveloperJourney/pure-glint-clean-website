@@ -25,7 +25,7 @@ const Pricing = () => {
       price: 205,
       priceLabel: "starting at",
       duration: "4-7 Hour Cleanings",
-      description: "Our most popular service - comprehensive cleaning that reaches every detail.",
+      description: "Our most popular service. Comprehensive cleaning that reaches every detail.",
       features: [
         "Everything in Standard Cleaning",
         "Tile and grout scrubbing",
@@ -53,7 +53,7 @@ const Pricing = () => {
         "Switch plate and outlet cleaning",
         "Final walkthrough included"
       ],
-      cta: "Get a Move-Out Quote",
+      cta: "Get a Move In/Move Out Quote",
       popular: false
     }
   ];
@@ -91,9 +91,9 @@ const Pricing = () => {
               )}
               
               <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-2xl font-semibold text-gray-900">{tier.name}</h3>
-                <p className="mt-2 text-gray-600">{tier.duration}</p>
-                <p className="mt-4 text-gray-500">{tier.description}</p>
+                <h3 className="text-2xl font-semibold text-gray-900 text-center">{tier.name}</h3>
+                <p className="mt-2 text-gray-600 text-center">{tier.duration}</p>
+                <p className="mt-4 text-gray-500 text-center">{tier.description}</p>
                 
                 <div className="mt-6">
                   <div className="flex items-baseline">
