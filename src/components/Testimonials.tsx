@@ -49,7 +49,7 @@ const Testimonials = ({ variant = 'default' }: TestimonialsProps) => {
             5-Star House Cleaning in Fort Worth
           </h2>
           <p className="mt-4 text-xl text-gray-600">
-            See What Customers Are Saying About Us
+            See What Our Customers Are Saying
           </p>
           <div className="flex items-center justify-center mt-4">
             <div className="flex items-center">
