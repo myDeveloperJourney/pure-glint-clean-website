@@ -279,13 +279,9 @@ const BookingForm = ({ redirectOnSuccess }: BookingFormProps) => {
                   disabled={isSubmitting}
                 >
                   <option value="">Select a service...</option>
-                  <option value="standard-clean">Standard Clean</option>
-                  <option value="deep-clean">Deep Clean</option>
-                  <option value="move-in-out">Move In/Out Clean</option>
-                  <option value="short-term-rental">Short Term Rental</option>
-                  <option value="post-construction">Post Construction</option>
-                  <option value="vacation-homes">Vacation Homes</option>
-                  <option value="not-sure">Not Sure - Let Us Make a Recommendation</option>
+                  <option value="standard-clean">Standard Clean — Your home is well-kept but needs a touch-up</option>
+                  <option value="deep-clean">Deep Clean — It&apos;s been a while since you cleaned</option>
+                  <option value="move-in-out">Move In/Out Clean — Getting a home ready for a new chapter</option>
                 </select>
               </div>
 
