@@ -2,7 +2,7 @@
 
 A modern, mobile-first website for **Pure Glint Clean**, a residential cleaning service in North Fort Worth and the greater DFW area. Designed, built, and deployed end to end.
 
-🔗 **Live:** https://pure-glint-clean-website.vercel.app
+🔗 **Live:** https://www.pureglintclean.com
 
 ## What it does
 - **Complete business site** — hero with clear CTAs and trust indicators, about, services (all 6 service types), and a transparent three-tier pricing section (Standard, Deep, Move-out).
